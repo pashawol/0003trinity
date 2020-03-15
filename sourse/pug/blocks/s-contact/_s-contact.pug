@@ -1,9 +1,25 @@
 mixin s-contact()
 	// start s-contact
-	+b.s-contact.section.block-with-lazy#s-contact&attributes(attributes)
+	+b.s-contact.section.swiper-slide.block-with-lazy#contact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 s-contact
-				
-			.row
+			h2 Контакты
+			+e.center
+				.row
+
+					+e.col.col-6(v-for="contact in contactsOffice"  :key="contact.title")
+						.h5.mb-4.fw-600 {{contact.title}}
+						p.fw-400  {{contact.text}}
+				+e.line(v-for="contactline in contactsLine"  :key="contactline.title")
+					+e.line-title {{contactline.title}}
+					+e.line-content(v-html="contactline.text")
+ 
+			+e.wrap
+				+e.item(v-for="n in 5" :id="'target-contact' + (6 - n)")
+					<picture> 
+						<source :srcset="'img/@2x/webp/elem-'+ (6 - n) + '.webp'" type="image/webp" media="(min-width:576px)"/>
+						<source :srcset="'img/@1x/webp/elem-'+ (6 - n) + '.webp'" type="image/webp"/>
+						<source :srcset="'img/@2x/elem-' + (6 - n) + '.png'" type="image/png" media="(min-width:576px)"/>
+						<source :srcset="'img/@1x/elem-'+(6 - n)+ '.png'" type="image/png"/>
+						<img :src="'img/@2x/elem-'+(6 - n)+ '.png'" alt=""/>
+					</picture> 
 	// end s-contact

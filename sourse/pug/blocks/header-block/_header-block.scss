@@ -1,7 +1,34 @@
+h1 {
+	font-weight: 800;
+	line-height: 91.4%;
+	text-transform: uppercase;
+	max-width: rem(800);
+	margin-bottom: em(9);
+
+	span {
+		color: $danger;
+		display: block;
+	}
+}
+
 .header-block {
 	display: block;
- 
-	
+	// padding-top: rem(275);
+	z-index: 40;
+	position: relative;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	p {
+		@extend .h5;
+		max-width: rem(370);
+		margin-bottom: rem(84);
+	}
+
 	// 
 	@include media-breakpoint-up(xl) {}
 
@@ -37,4 +64,9 @@
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {}
+}
+
+
+.trigger-slide {
+	width: 1px;
 }

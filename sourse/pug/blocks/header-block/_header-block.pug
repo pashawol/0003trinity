@@ -1,7 +1,17 @@
 mixin header-block()
 	// start header-block
-	+b.header-block#header-block
+	+b.header-block.section.swiper-slide#header-block
 		.container
-			h1 header-block
-			.row
+			h1 Ваш #[span стиль] презентации
+			p Создадим и&nbsp;запустим ваш проект в&nbsp;красивой оболочке
+			+btn()
+			+e.wrap
+				+e.item(v-for="n in 5" :id="'target' + (6 - n)")
+					<picture> 
+						<source :srcset="'img/@2x/webp/elem-'+ (6 - n) + '.webp'" type="image/webp" media="(min-width:576px)"/>
+						<source :srcset="'img/@1x/webp/elem-'+ (6 - n) + '.webp'" type="image/webp"/>
+						<source :srcset="'img/@2x/elem-' + (6 - n) + '.png'" type="image/png" media="(min-width:576px)"/>
+						<source :srcset="'img/@1x/elem-'+(6 - n)+ '.png'" type="image/png"/>
+						<img :src="'img/@2x/elem-'+(6 - n)+ '.png'" alt=""/>
+					</picture> 
 	// end header-block

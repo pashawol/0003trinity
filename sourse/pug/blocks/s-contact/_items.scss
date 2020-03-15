@@ -1,0 +1,131 @@
+.s-contact {
+
+	&__item {
+		position: fixed;
+		top: 75vh;
+		left: calc(650vw + #{rem(200px)});
+		z-index: 2;
+		@include mt;
+		pointer-events: none;
+		z-index: -1;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -50%;
+			top: -50%;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		picture {
+			background-color: transparent;
+			width: 100%;
+			height: 100%;
+
+			&.animate {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		&:nth-child(5) {
+			width: rem(174px);
+			height: rem(167px);
+			top: 94vh;
+			margin-left: rem(240);
+
+			&::before {
+				box-shadow: rem(130px) rem(130px) $h4-font-size rgba(0, 0, 0, 0.28);
+				// box-shadow: rem(70px) rem(70px) $h4-font-size rgba(0, 0, 0, 0.28);
+			}
+		}
+
+		&:nth-child(4) {
+			width: rem(325px);
+			height: rem(317px);
+			top: 55vh;
+			margin-left: rem(280);
+
+			&::before {
+				left: -70%;
+				top: -70%;
+				width: 90%;
+				height: 90%;
+				box-shadow: rem(325px) rem(317px) $h4-font-size rgba(0, 0, 0, 0.28);
+			}
+		}
+
+		&:nth-child(3) {
+			width: rem(863px);
+			height: rem(829px);
+			// transform: rotate(112.65deg);
+			top: 60vh;
+			margin-left: rem(240);
+		}
+
+		&:nth-child(2) {
+			width: rem(408px);
+			height: rem(357px);
+			transform: rotate(8.25deg);
+			top: 46vh;
+			margin-left: rem(480);
+		}
+
+		&:nth-child(1) {
+			width: rem(414px);
+			height: rem(490px);
+			top: 24vh;
+			margin-left: rem(110);
+
+			&.fish {
+				transform: translate(-400px, -400px);
+			}
+		}
+
+	}
+
+
+	// 
+	@include media-breakpoint-up(xl) {}
+
+	@include media-breakpoint-up(lg) {}
+
+	@include media-breakpoint-up(md) {}
+
+	@include media-breakpoint-up(sm) {}
+
+	@include media-breakpoint-up(xs) {}
+
+	// 
+	@include media-breakpoint-between(md, xl) {}
+
+	// 
+	@include media-breakpoint-only(xs) {}
+
+	@include media-breakpoint-only(sm) {}
+
+	@include media-breakpoint-only(md) {}
+
+	@include media-breakpoint-only(lg) {}
+
+	@include media-breakpoint-only(xl) {}
+
+	// 
+	@include media-breakpoint-down(xl) {}
+
+	@include media-breakpoint-down(lg) {}
+
+	@include media-breakpoint-down(md) {}
+
+	@include media-breakpoint-down(sm) {}
+
+	@include media-breakpoint-down(xs) {}
+}

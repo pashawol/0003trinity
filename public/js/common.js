@@ -1,11 +1,8 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
@@ -74,8 +71,6 @@ var JSCCommon = {
 
 		_this.menuMobileLink.forEach(function (element) {
 			element.addEventListener('click', function (e) {
-				console.log(element);
-
 				_this.closeMenu();
 			});
 		});
@@ -88,14 +83,7 @@ var JSCCommon = {
 			}
 		});
 	},
-	// /mobileMenu
-	// табы  . 
-	tabscostume: function tabscostume(tab) {
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-			$(this).addClass('active').siblings().removeClass('active').closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active').eq($(this).index()).show().addClass('active');
-		});
-	},
-	// /табы  
+	// /mobileMenu 
 	inputMask: function inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
@@ -104,173 +92,215 @@ var JSCCommon = {
 };
 
 function eventHandler() {
+	var _TweenMax$from2;
+
+	JSCCommon.mobileMenu(); // JSCCommon.inputMask();
 	// полифил для object-fit
+
 	objectFitImages(); // Picture element HTML5 shiv
 
 	document.createElement("picture"); // для свг
 
-	svg4everybody({});
-	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
-	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
+	svg4everybody({}); // добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
-	// /закрыть/открыть мобильное меню
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Frame9.jpg);"></div>'); // /добавляет подложку для pixel perfect
 
-	function heightses() {
-		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
-		// скрывает моб меню
-
-		var topH = $("header ").innerHeight();
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		}); // конец добавил
-
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
-		}
+	function onMouseWheel(e) {
+		clearTimeout($.data(this, 'timer'));
+		$(".swiper-wrapper").addClass('mousewheel');
+		$.data(this, 'timer', setTimeout(function () {
+			$(".swiper-wrapper").removeClass('mousewheel');
+		}, 150));
 	}
 
-	$(window).resize(function () {
-		heightses();
-	});
-	heightses(); // листалка по стр
+	;
+	window.addEventListener('mousewheel', onMouseWheel, false);
+	window.addEventListener('DOMMouseScroll', onMouseWheel, false); // init controller
 
-	$(" .top-nav li a, .scroll-link").click(function () {
-		var elementClick = $(this).attr("href");
-		var destination = $(elementClick).offset().top;
-		$('html, body').animate({
-			scrollTop: destination
-		}, 1100);
-		return false;
-	});
-	var icon = '<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve" ><path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" ></path>';
-	var arrl2 = ' <div class="r">' + icon,
-			arrr2 = ' <div class="l">' + icon; // // карусель
+	var controller = new ScrollMagic.Controller({
+		container: "#swiper-container",
+		vertical: false
+	}); // var controller = new ScrollMagic.Controller();
 
-	var defaultSlide = {
-		speed: 600,
-		infinite: true,
-		arrows: true,
-		mobileFirst: true,
-		prevArrow: arrr2,
-		nextArrow: arrl2,
-		// autoplay: true,
-		autoplaySpeed: 6000,
-		lazyLoad: 'progressive'
-	};
-	$('.s-gal__slider--js').slick(_objectSpread({}, defaultSlide, {
-		slidesToShow: 1,
-		responsive: [{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 4
+	var mainSlider = new Swiper('.main-slider-js', {
+		slidesPerView: "auto",
+		freeMode: true,
+		keyboard: true,
+		speed: 1600,
+		lazy: {
+			loadPrevNext: true
+		},
+		// initialSlide: 2,
+		hashNavigation: {
+			replaceState: true
+		},
+		mousewheel: {
+			sensitivity: 1.5 // releaseOnEdges: true,
+			// forceToAxis: true,
+
+		},
+		// initialSlide:6,
+		on: {
+			init: function init() {
+				/* do something */
+				$(".moon-block").addClass("moon-block--active");
 			}
-		}, {
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 3
-			}
-		}, {
-			breakpoint: 576,
-			settings: {
-				slidesToShow: 2,
-				arrows: true
-			}
-		}]
-	})); // $('.s-gal__slider\
-	// ,.slider-for2 ')
-	// 	.on('lazyLoaded', function (event, slick, image, imageSource) {
-	// 		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-	// 	});
-	// slider
-	// const swiper4 = new Swiper('.color-slider', {
-	// 	// slidesPerView: 5,
-	// 	slidesPerView: 'auto',
-	// 	watchOverflow: true,
-	// 	spaceBetween: 0,
-	// 	freeMode: true,
-	// 	watchOverflow: true,
-	// 	slidesPerGroup: 3,
-	// 	// centeredSlides: true,
-	// 	loop: true,
-	// 	loopFillGroupWithBlank: true,
-	// 	touchRatio: 0.2,
-	// 	slideToClickedSlide: true,
-	// 	freeModeMomentum: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
-	// });
-	// modal window
-	//    const wow = new WOW({ mobile: false });
-	//         wow.init();
-
-	var gets = function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
 		}
-
-		return b;
-	}(); // form
-
-
-	$("form").submit(function (e) {
-		e.preventDefault();
-		var th = $(this);
-		var data = th.serialize();
-		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data
-		}).done(function (data) {
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			}); // window.location.replace("/thanks.html");
-
-			setTimeout(function () {
-				// Done Functions
-				th.trigger("reset"); // $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function () {});
 	});
-}
+	var width = $('#header-block').width();
+	var offsetEl = width * .52;
+	var durationEl = ($(window).width() - offsetEl) * .9; // build tween
+	// main animate
 
-;
+	var tweens = [TweenMax.to("#target1", 1, {
+		x: -800,
+		y: -800,
+		opacity: 0,
+		scale: 0.5,
+		ease: "elastic",
+		rotation: 60
+	}), TweenMax.to("#target2", 1, {
+		y: 10,
+		x: 500,
+		opacity: 0,
+		// scale: 0,
+		ease: "elastic",
+		rotation: 30
+	}), TweenMax.to("#target3", 10, _defineProperty({
+		x: -1800,
+		y: -50,
+		rotation: 120,
+		opacity: 0,
+		scale: 0,
+		ease: "elastic"
+	}, "rotation", 40)), TweenMax.to("#target4", 1, {
+		x: -800,
+		y: 1000,
+		opacity: 0.5,
+		scale: 0.9,
+		ease: "elastic"
+	}), TweenMax.to("#target5", 1, {
+		x: -10,
+		y: -1000,
+		ease: "elastic",
+		rotation: 140
+	})]; // build scene 
+
+	for (var i = 0, l = tweens.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: "#header-block",
+			duration: durationEl,
+			offset: offsetEl
+		}).setTween(tweens[i]) // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	} // main animate
+	// contact animate
+
+
+	var tweensContact = [TweenMax.from("#target-contact1", 10, {
+		x: -800,
+		y: -800,
+		opacity: 0,
+		scale: 0.5,
+		ease: "elastic",
+		rotation: 60
+	}), TweenMax.from("#target-contact2", 10, {
+		y: -400,
+		x: -2400,
+		scale: 0.6,
+		ease: "elastic",
+		rotation: 90
+	}), TweenMax.from("#target-contact3", 10, _defineProperty({
+		y: 10,
+		x: -2400,
+		rotation: 120,
+		scale: 0.8,
+		ease: "elastic"
+	}, "rotation", 360)), TweenMax.from("#target-contact4", 10, (_TweenMax$from2 = {
+		yPercent: 200,
+		x: -2000
+	}, _defineProperty(_TweenMax$from2, "yPercent", 50), _defineProperty(_TweenMax$from2, "rotation", 120), _defineProperty(_TweenMax$from2, "scale", 0.5), _TweenMax$from2)), TweenMax.from("#target-contact5", 10, {
+		x: -2900,
+		yPercent: 50,
+		rotation: 120,
+		scale: 0.5,
+		ease: "elastic"
+	})]; // build scene 
+
+	for (var i = 0, l = tweensContact.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: "#contact",
+			duration: durationEl * 1.4,
+			offset: -offsetEl / 1
+		}).setTween(tweensContact[i]) // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	}
+
+	var tweensServises = [TweenMax.to("#target-servise1", 11, {
+		x: -800,
+		y: 800,
+		ease: "elastic",
+		rotation: 160
+	}), TweenMax.to("#target-servise2", 11, {
+		x: 1000,
+		y: -2000,
+		ease: "elastic",
+		// opacity: 0.5,
+		scale: 0.5,
+		rotation: 130
+	})]; // contact animate
+	// build scene 
+
+	for (var i = 0, l = tweensServises.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: "#visual",
+			duration: durationEl,
+			offset: offsetEl
+		}).setTween(tweensServises[i]) // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	} // / servises1 animate
+	// servises2 animate
+
+
+	var tweensServises2 = [TweenMax.to("#target-servise21", 11, {
+		// x: 1000,
+		y: 800,
+		ease: "elastic",
+		// opacity: 0.5,
+		scale: 0.5,
+		rotation: 130
+	})]; // build scene 
+
+	for (var i = 0, l = tweensServises2.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: "#content",
+			duration: durationEl,
+			offset: offsetEl
+		}).setTween(tweensServises2[i]) // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	} // /servises2 animate
+	// servises2 animate
+
+
+	var tweensServises3 = [TweenMax.to("#target-servise31", 11, {
+		x: 1000,
+		y: -2300,
+		ease: "elastic",
+		// opacity: 0.5,
+		scale: 0.5,
+		rotation: 130
+	})]; // build scene 
+
+	for (var i = 0, l = tweensServises3.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: "#projectManagement",
+			duration: durationEl,
+			offset: offsetEl
+		}).setTween(tweensServises3[i]) // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	} // /servises2 animate
+
+}
 
 if (document.readyState !== 'loading') {
 	eventHandler();

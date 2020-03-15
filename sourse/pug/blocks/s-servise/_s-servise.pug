@@ -1,0 +1,59 @@
+mixin section-body(t)
+	// start s-servise
+	+b.SECTION.s-servise.section.swiper-slide&attributes(attributes)
+		.container
+			h2 Услуги
+				
+			+e.sub-title= t
+			block
+			+btn()
+	// end s-servise
+
+mixin s-servise1()
+	+section-body('VisuaL')&attributes(attributes)
+		ul
+			li(v-for="servise in servises"  :key="servise.text")
+				img.swiper-lazy(src="#" :data-src="imgSRc+ '/servise-' + servise.img + '.png'", alt="")
+				span {{servise.text}}
+		+e.wrap
+			+e.item(v-for="n in 2" :id="'target-servise' + ( n)")
+				<picture> 
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/webp/servise-lg-'+ ( n) + '.webp'" type="image/webp" media="(min-width:576px)"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/webp/servise-lg-'+ ( n) + '.webp'" type="image/webp"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/servise-lg-' + ( n) + '.png'" type="image/png'" media="(min-width:576px)"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/servise-lg-'+( n)+ '.png'" type="image/png'"/>
+					<img class="swiper-lazy" src="#" :data-src="'img/@2x/servise-lg-'+( n)+ '.png'" alt=""/>
+				</picture> 
+mixin s-servise2()
+	+section-body('Content')&attributes(attributes)
+		ul
+			li(v-for="servise in servises2"  :key="servise.text")
+				img.swiper-lazy(src="#" :data-src="imgSRc+ '/servise-' + servise.img + '.png'", alt="")
+				span {{servise.text}}
+		+e.wrap
+			+e.item--2(v-for="n in 1" :id="'target-servise2' + ( n)")
+				<picture> 
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/webp/servise-lg-'+ ( 3) + '.webp'" type="image/webp" media="(min-width:576px)"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/webp/servise-lg-'+ ( 3) + '.webp'" type="image/webp"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/servise-lg-' + ( 3) + '.png'" type="image/png'" media="(min-width:576px)"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/servise-lg-'+( 3)+ '.png'" type="image/png'"/>
+					<img class="swiper-lazy" src="#" :data-src="'img/@2x/servise-lg-'+( 3)+ '.png'" alt=""/>
+				</picture> 
+
+				
+mixin s-servise3()
+	+section-body('Project management')&attributes(attributes)
+		ul
+			li(v-for="servise in servises3"  :key="servise.text")
+				img.swiper-lazy(src="#" :data-src="imgSRc+ '/servise-' + servise.img + '.png'", alt="")
+				span {{servise.text}}
+		+e.wrap
+			+e.item--3(v-for="n in 1" :id="'target-servise3' + ( n)")
+				<picture> 
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/webp/servise-lg-'+ ( 4) + '.webp'" type="image/webp" media="(min-width:576px)"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/webp/servise-lg-'+ ( 4) + '.webp'" type="image/webp"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/servise-lg-' + ( 4) + '.png'" type="image/png'" media="(min-width:576px)"/>
+					<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/servise-lg-'+( 4)+ '.png'" type="image/png'"/>
+					<img class="swiper-lazy" src="#" :data-src="'img/@2x/servise-lg-'+( 4)+ '.png'" alt=""/>
+				</picture> 
+

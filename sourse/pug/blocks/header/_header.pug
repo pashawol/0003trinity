@@ -1,7 +1,46 @@
 mixin header()
 
 	// start HEADER.header
-	+b.HEADER.header.block-with-lazy
-		block
-	
+	+b.HEADER.header
+		.container
+			.row
+				+e.col.col-lg-auto.col
+					+e.logo(href='/')
+						img(src="img/svg/logo.svg", alt="")
+				.col-lg.order-lg-0.order-last
+					+b.menu-mobile--js
+						+b.toggle-menu-mobile--js.d-lg-none
+							span
+						+e.inner 
+							ul
+								li
+									a(href="#s-servise") Услуги
+								
+								li
+									a(href="#s-clients") Клиенты
+								
+								li
+									a(href="#s-documents") Документы
+								
+								li
+									a(href="#_s-contact") Контакты
+							.d-lg-none.pl-3
+								+e.tel(href="#") +7 495 336 55 44
+								br
+								a.btn.btn-outline-danger.mt-4(href="#") Стать клиетом
+				+e.col.col-auto
+					+e.tel(href="#") +7 495 336 55 44
+				+e.col.col-auto.d-none.d-md-block
+					+e.btn(href="#") Стать клиетом
+				+e.col.col-auto.d-lg-none
+					+b.toggle-menu-mobile--js
+						span
+							
+
+
+
+
+
+
+						
 	// end HEADER.header

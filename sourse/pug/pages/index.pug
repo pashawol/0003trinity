@@ -3,18 +3,26 @@ extends layout/main.pug
 
 include ../blocks/s-content/_s-content.pug
 include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-servise/_s-servise.pug
+include ../blocks/s-clients/_s-clients.pug
+include ../blocks/s-documents/_s-documents.pug
 
 block variables
 	- let  mainPage= null
 block title
 	- let  title= 'title'
 	title= title
-block pagecontent 
-	+mob-mnu()
+block pagecontent  
 	+header()
-		+top-line()
-		+top-nav()
-	+header-block()
-	+s-form()
-	+s-contact()
-	+footer()
+	.main-slider-js.swiper-container#swiper-container
+		.swiper-wrapper#swiper-wrapper
+			.swiper-slide.trigger-slide#trigger.section
+			+header-block()(data-hash="main") 
+			+s-servise1(id="visual" data-hash="visual" )
+			+s-servise2(id="content" data-hash="content"  )
+			+s-servise3(id="projectManagement" data-hash="projectManagement"  )
+
+			+s-clients(data-hash="clients")
+			+s-documents(data-hash="documents")
+			+s-contact()(data-hash="contacts") 
+	+footer

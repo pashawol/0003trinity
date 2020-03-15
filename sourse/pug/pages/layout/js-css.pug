@@ -2,15 +2,22 @@ mixin allcss()
 	//- link(rel="stylesheet", href="libs/magnificPopup/magnific-popup.css")
 	//- link(rel="stylesheet", href="libs/Easy-Responsive-Tab-Accordion-Control-Plugin-For-jQuery/easy-responsive-tabs.css")
 	//- link(rel="stylesheet", href="css/main.css")
-	//- link(rel="stylesheet", href="libs/swiper/css/swiper.min.css")
-	link(rel="stylesheet", href="libs/slick-carousel/slick/slick.css")
+	link(rel="stylesheet", href="libs/swiper/css/swiper.min.css")
+	//- link(rel="stylesheet", href="libs/slick-carousel/slick/slick.css")
 	link(rel="stylesheet", href="libs/@fancyapps/fancybox/jquery.fancybox.min.css")
 	link(rel="stylesheet", href="css/main.min.css")
 	
 mixin allcjs()
 	//- link(rel="stylesheet", href="fonts/fontello/css/fontello.css")
+	script(src="libs/vue/vue.min.js")
+	script(src="js/app.js")
 	script(src="js/lazy.js")
 	script(src="libs/jquery/jquery.min.js")
+	<script src="http://scrollmagic.io/assets/js/lib/highlight.pack.js"></script> 
+	<script src="http://scrollmagic.io/assets/js/lib/greensock/TweenMax.min.js"></script>
+	<script src="http://scrollmagic.io/scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script src="http://scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 	// полифил для picture
 	script(src="libs/picturefill/picturefill.min.js")
 	// полифил для object-fit
@@ -19,13 +26,11 @@ mixin allcjs()
 	script(src="libs/@fancyapps/fancybox/jquery.fancybox.min.js")
 	// modal libs
 	// slider libs
-	//- script(src="libs/swiper/js/swiper.min.js")
-	script(src="libs/slick-carousel/slick/slick.min.js")
+	script(src="libs/swiper/js/swiper.min.js") 
 	// /slider libs
 	// for svg libs
 	script(src="libs/svg4everybody/svg4everybody.min.js")
-	// /for svg libs
-	script(src="libs/inputmask/jquery.inputmask.min.js")
+	// /for svg libs 
 	script(src="js/common.js")
 	//- cut text libs
 	//- script(src="libs/jquery.morelines.min.js") 

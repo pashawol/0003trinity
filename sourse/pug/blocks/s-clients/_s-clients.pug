@@ -1,0 +1,12 @@
+mixin s-clients()
+	// start s-clients
+	+b.SECTION.s-clients.section.swiper-slide#s-clients&attributes(attributes)
+		.container
+			h2 КЛИЕНТЫ
+				
+			.row.row-cols-md-3.text-center.justify-content-between
+				+e.col.col-auto(v-for="client in clients"  :key="client.text")
+					+e.img-wrap
+						img.res-i.swiper-lazy(src="#" :data-src="'img/svg/' + client.img", alt="")
+					+e.title {{client.text}}
+	// end s-clients
