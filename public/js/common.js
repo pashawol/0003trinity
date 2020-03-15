@@ -92,9 +92,8 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _TweenMax$from;
-
-	JSCCommon.mobileMenu(); // JSCCommon.inputMask();
+	JSCCommon.mobileMenu();
+	JSCCommon.modalCall(); // JSCCommon.inputMask();
 	// полифил для object-fit
 
 	objectFitImages(); // Picture element HTML5 shiv
@@ -120,67 +119,80 @@ function eventHandler() {
 		vertical: false
 	}); // var controller = new ScrollMagic.Controller();
 
-	var mainSlider = new Swiper('.main-slider-js', {
-		slidesPerView: "auto",
-		freeMode: true,
-		keyboard: true,
-		speed: 1600,
-		lazy: {
-			loadPrevNext: true,
-			loadPrevNextAmount: 2
-		},
-		// initialSlide: 2,
-		hashNavigation: {
-			replaceState: true
-		},
-		mousewheel: {
-			sensitivity: 1.5 // releaseOnEdges: true,
-			// forceToAxis: true,
+	var mainSlider = undefined;
 
-		},
-		// initialSlide:6,
-		on: {
-			init: function init() {
-				/* do something */
-				$(".moon-block").addClass("moon-block--active");
-			}
+	function heightses() {
+		var w = $(window).width();
+		var screenWidth = $(window).width(); // конец добавил
+
+		if (screenWidth > 992 && mainSlider == undefined) {
+			var _mainSlider = new Swiper('.main-slider-js', {
+				slidesPerView: "auto",
+				freeMode: true,
+				keyboard: true,
+				speed: 1600,
+				lazy: {
+					loadPrevNext: true,
+					loadPrevNextAmount: 4
+				},
+				// initialSlide: 2,
+				hashNavigation: {
+					replaceState: true
+				},
+				mousewheel: {
+					sensitivity: 1.5 // releaseOnEdges: true,
+					// forceToAxis: true,
+
+				}
+			});
+		} else if (screenWidth < 991 && mainSlider != undefined) {
+			mainSlider.destroy();
+			mainSlider = undefined;
+			jQuery('.swiper-wrapper').removeAttr('style');
+			jQuery('.swiper-slide').removeAttr('style');
 		}
+	}
+
+	$(window).resize(function () {
+		heightses();
 	});
+	heightses();
 	var width = $('#header-block').width();
+	var height = $('#header-block').height();
 	var offsetEl = width * .52;
 	var durationEl = ($(window).width() - offsetEl) * 1.2; // build tween
 	// main animate
 
 	var tweens = [TweenMax.to("#target1", 100, {
-		x: -800,
-		y: -800,
+		x: '-90%',
+		y: '-290%',
 		opacity: 0,
 		scale: 0.5,
 		ease: "elastic",
 		rotation: 60
 	}), TweenMax.to("#target2", 100, {
-		y: 10,
-		x: 500,
+		y: "10%",
+		x: "600%",
 		opacity: 0,
 		// scale: 0,
 		ease: "elastic",
 		rotation: 30
 	}), TweenMax.to("#target3", 100, _defineProperty({
-		x: -1800,
-		y: -50,
+		x: "-400%",
+		y: "10%",
 		rotation: 120,
 		opacity: 0,
 		scale: 0,
 		ease: "elastic"
 	}, "rotation", 40)), TweenMax.to("#target4", 100, {
-		x: -800,
-		y: 1000,
+		x: "-350%",
+		y: "350%",
 		opacity: 0.5,
 		scale: 0.9,
 		ease: "elastic"
 	}), TweenMax.to("#target5", 100, {
-		x: -10,
-		y: -1000,
+		x: "-10%",
+		y: "-400%",
 		ease: "elastic",
 		rotation: 140
 	})]; // build scene 
@@ -197,30 +209,34 @@ function eventHandler() {
 
 
 	var tweensContact = [TweenMax.from("#target-contact1", 100, {
-		x: -800,
-		y: -800,
+		x: "100%",
+		y: "-700%",
 		opacity: 0,
 		scale: 0.5,
 		ease: "elastic",
 		rotation: 60
 	}), TweenMax.from("#target-contact2", 100, {
-		y: -400,
-		x: -2400,
+		y: "-150%",
+		x: "-800%",
 		scale: 0.6,
 		ease: "elastic",
 		rotation: 90
 	}), TweenMax.from("#target-contact3", 100, {
-		y: 10,
-		x: -2400,
-		rotation: 120,
+		y: "5%",
+		x: "-300%",
+		rotation: 240,
 		scale: 0.8,
 		ease: "elastic" // rotation: 260,
 
-	}), TweenMax.from("#target-contact4", 100, (_TweenMax$from = {
-		yPercent: 200,
-		x: -2000
-	}, _defineProperty(_TweenMax$from, "yPercent", 50), _defineProperty(_TweenMax$from, "rotation", 120), _defineProperty(_TweenMax$from, "scale", 0.5), _TweenMax$from)), TweenMax.from("#target-contact5", 100, {
-		x: -2900,
+	}), TweenMax.from("#target-contact4", 100, {
+		// yPercent: 10,
+		y: "10%",
+		x: "-550%",
+		yPercent: 50,
+		rotation: 120,
+		scale: 0.5
+	}), TweenMax.from("#target-contact5", 100, {
+		x: "-700%",
 		yPercent: 50,
 		rotation: 120,
 		scale: 0.5,
@@ -237,13 +253,13 @@ function eventHandler() {
 	}
 
 	var tweensServises = [TweenMax.to("#target-servise1", 11, {
-		x: -800,
-		y: 800,
+		x: "-100%",
+		y: "100%",
 		ease: "elastic",
 		rotation: 160
 	}), TweenMax.to("#target-servise2", 11, {
-		x: 1000,
-		y: -2000,
+		x: "200%",
+		y: "-500%",
 		ease: "elastic",
 		// opacity: 0.5,
 		scale: 0.5,
@@ -264,7 +280,8 @@ function eventHandler() {
 
 	var tweensServises2 = [TweenMax.to("#target-servise21", 11, {
 		// x: 1000,
-		y: 800,
+		x: "-100%",
+		y: "-200%",
 		ease: "elastic",
 		// opacity: 0.5,
 		scale: 0.5,
@@ -283,8 +300,8 @@ function eventHandler() {
 
 
 	var tweensServises3 = [TweenMax.to("#target-servise31", 11, {
-		x: 1000,
-		y: -2300,
+		x: "100%",
+		y: "-200%",
 		ease: "elastic",
 		// opacity: 0.5,
 		scale: 0.5,
@@ -293,14 +310,64 @@ function eventHandler() {
 
 	for (var i = 0, l = tweensServises3.length; i < l; i++) {
 		var scene = new ScrollMagic.Scene({
-			triggerElement: "#projectManagement",
+			triggerElement: "#project-management",
 			duration: durationEl,
 			offset: offsetEl
 		}).setTween(tweensServises3[i]) // .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
 	} // /servises2 animate
 
+
+	var gets = function () {
+		var a = window.location.search;
+		var b = new Object();
+		var c;
+		a = a.substring(1).split("&");
+
+		for (var i = 0; i < a.length; i++) {
+			c = a[i].split("=");
+			b[c[0]] = c[1];
+		}
+
+		return b;
+	}(); // form
+
+
+	$("form").submit(function (e) {
+		e.preventDefault();
+		var th = $(this);
+		var data = th.serialize();
+		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+		$.ajax({
+			url: 'action.php',
+			type: 'POST',
+			data: data
+		}).done(function (data) {
+			$.fancybox.close();
+			$.fancybox.open({
+				src: '#modal-thanks',
+				type: 'inline'
+			}); // window.location.replace("/thanks.html");
+
+			setTimeout(function () {
+				// Done Functions
+				th.trigger("reset"); // $.magnificPopup.close();
+				// ym(53383120, 'reachGoal', 'zakaz');
+				// yaCounter55828534.reachGoal('zakaz');
+			}, 4000);
+		}).fail(function () {});
+	});
+	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+
+	if (isIE11) {
+		$("body").prepend("<p   class=\"browsehappy container\">\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0432\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0435 \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u0438\u0439 \u0431\u0440\u0430\u0443\u0437\u0435\u0440. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, <a href=\"http://browsehappy.com/\" target=\"_blank\">\u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440</a>, \u0447\u0442\u043E\u0431\u044B \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C, \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0430\u0435\u043C\u043E\u0433\u043E \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430 \u0438 \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u044C \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u044C.</p>");
+	}
 }
+
+;
 
 if (document.readyState !== 'loading') {
 	eventHandler();

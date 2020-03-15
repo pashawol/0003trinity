@@ -30,8 +30,15 @@
 	}
 
 	&__line {
-		display: flex;
-		flex-wrap: wrap;
+		@include media-breakpoint-up(sm) {
+
+			display: flex;
+			flex-wrap: wrap;
+			max-width: none;
+		}
+
+		max-width: rem(260);
+
 		padding-bottom: rem(10);
 	}
 

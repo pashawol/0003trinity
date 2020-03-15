@@ -1,9 +1,18 @@
 .s-contact {
 
 	&__item {
-		position: fixed;
-		top: 75vh;
-		left: calc(650vw + #{rem(200px)});
+		position: absolute;
+
+		@include media-breakpoint-up(lg) {
+			position: fixed;
+
+			top: 75vh;
+			left: calc(650vw + #{rem(200px)});
+		}
+
+		top: 35vh;
+
+		left: calc(20vw + #{rem(200px)});
 		z-index: 2;
 		@include mt;
 		pointer-events: none;
@@ -37,10 +46,22 @@
 		}
 
 		&:nth-child(5) {
-			width: rem(174px);
-			height: rem(167px);
-			top: 94vh;
-			margin-left: rem(240);
+			@include media-breakpoint-up(sm) {
+
+				width: rem(174px);
+				height: rem(167px);
+
+				top: 94vh;
+				margin-left: rem(240);
+			}
+
+			margin-left: rem(40);
+
+			top: 44vh;
+
+			@include media-breakpoint-up(lg) {}
+
+
 
 			&::before {
 				box-shadow: rem(130px) rem(130px) $h4-font-size rgba(0, 0, 0, 0.28);
@@ -49,10 +70,15 @@
 		}
 
 		&:nth-child(4) {
-			width: rem(325px);
-			height: rem(317px);
+			@include media-breakpoint-up(sm) {
+
+				width: rem(325px);
+				height: rem(317px);
+				margin-left: rem(280);
+			}
+
 			top: 55vh;
-			margin-left: rem(280);
+
 
 			&::before {
 				left: -70%;
@@ -64,26 +90,42 @@
 		}
 
 		&:nth-child(3) {
-			width: rem(863px);
-			height: rem(829px);
-			// transform: rotate(112.65deg);
+			@include media-breakpoint-up(sm) {
+
+				width: rem(863px);
+				height: rem(829px);
+				margin-left: rem(240);
+			}
+
 			top: 60vh;
-			margin-left: rem(240);
+
+			// transform: rotate(112.65deg);
 		}
 
 		&:nth-child(2) {
-			width: rem(408px);
-			height: rem(357px);
+			@include media-breakpoint-up(sm) {
+
+				width: rem(408px);
+				height: rem(357px);
+				top: 46vh;
+				margin-left: rem(480);
+			}
+
+			// margin-left: rem(80);
+
 			transform: rotate(8.25deg);
-			top: 46vh;
-			margin-left: rem(480);
 		}
 
 		&:nth-child(1) {
-			width: rem(414px);
-			height: rem(490px);
+			@include media-breakpoint-up(sm) {
+
+				width: rem(414px);
+				height: rem(490px);
+				margin-left: rem(110);
+			}
+
 			top: 24vh;
-			margin-left: rem(110);
+
 
 			&.fish {
 				transform: translate(-400px, -400px);

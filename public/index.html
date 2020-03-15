@@ -18,8 +18,9 @@
 		<meta property="og:image:width" content="968">
 		<meta property="og:image:height" content="504">
 		<!-- Custom Browsers Color-->
-		<meta name="theme-color" content="#3361d8">
+		<meta name="theme-color" content="#004d74">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body id="container1"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
@@ -41,14 +42,14 @@
 										<li><a href="#s-documents">Документы</a></li>
 										<li><a href="#_s-contact">Контакты</a></li>
 									</ul>
-									<div class="d-lg-none pl-3"><a class="menu-mobile__tel" href="#">+7 495 336 55 44</a><br/><a class="btn btn-outline-danger mt-4" href="#">Стать клиетом</a>
+									<div class="d-lg-none pl-3"><a class="menu-mobile__tel" href="#">+7 495 336 55 44</a><br/><a class="btn btn-outline-danger mt-4 link-modal" href="#modal-call">Стать клиетом</a>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="header__col col-auto"><a class="header__tel" href="#">+7 495 336 55 44</a>
 						</div>
-						<div class="header__col col-auto d-none d-md-block"><a class="header__btn" href="#">Стать клиетом</a>
+						<div class="header__col col-auto d-none d-md-block"><a class="header__btn link-modal" href="#modal-call">Стать клиетом</a>
 						</div>
 						<div class="header__col col-auto d-lg-none">
 							<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
@@ -60,14 +61,15 @@
 			<!-- end HEADER.header-->
 			<div class="main-slider-js swiper-container" id="swiper-container">
 				<div class="swiper-wrapper" id="swiper-wrapper">
-					<div class="swiper-slide trigger-slide section" id="trigger"></div>
 					<!-- start header-block-->
 					<div class="header-block section swiper-slide" id="header-block" data-hash="main-section">
 						<div class="container">
-							<h1>Ваш <span>стиль</span> презентации</h1>
-							<p>Создадим и&nbsp;запустим ваш проект в&nbsp;красивой оболочке</p><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
+							<div class="header-block__inner">
+								<h1>Ваш <span>стиль</span> презентации</h1>
+								<p>Создадим и&nbsp;запустим ваш проект в&nbsp;красивой оболочке</p><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
+							</div>
 							<div class="header-block__wrap">
-								<div class="header-block__item" v-for="n in 5" :id="'target' + (6 - n)"><picture> 
+								<div class="header-block__item animate-item-js" v-for="n in 5" :id="'target' + (6 - n)"><picture> 
 <source :srcset="'img/@2x/webp/elem-'+ (6 - n) + '.webp'" type="image/webp" media="(min-width:576px)"/>
 <source :srcset="'img/@1x/webp/elem-'+ (6 - n) + '.webp'" type="image/webp"/>
 <source :srcset="'img/@2x/elem-' + (6 - n) + '.png'" type="image/png" media="(min-width:576px)"/>
@@ -80,21 +82,21 @@
 					</div>
 					<!-- end header-block-->
 					<!-- start s-servise-->
-					<section class="s-servise section swiper-slide" id="visual" data-hash="visual">
+					<section class="s-servise section swiper-slide s-servise s-servise--visual" id="visual" data-hash="visual">
 						<div class="container">
 							<h2>Услуги</h2>
 							<div class="s-servise__sub-title">VisuaL
 							</div>
 							<ul>
-								<li v-for="servise in servises" :key="servise.text"><img class="swiper-lazy" src="#" :data-src="imgSRc+ '/servise-' + servise.img + '.png'" alt=""/><span>{{servise.text}}</span></li>
+								<li v-for="servise in servises" :key="servise.text"><img class="swiper-lazy" :src="imgSRc+ '/servise-' + servise.img + '.png'" alt=""/><span>{{servise.text}}</span></li>
 							</ul>
 							<div class="s-servise__wrap">
-								<div class="s-servise__item" v-for="n in 2" :id="'target-servise' + ( n)"><picture> 
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/webp/servise-lg-'+ ( n) + '.webp'" type="image/webp" media="(min-width:576px)"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/webp/servise-lg-'+ ( n) + '.webp'" type="image/webp"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/servise-lg-' + ( n) + '.png'" type="image/png'" media="(min-width:576px)"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/servise-lg-'+( n)+ '.png'" type="image/png'"/>
-<img class="swiper-lazy" src="#" :data-src="'img/@2x/servise-lg-'+( n)+ '.png'" alt=""/>
+								<div class="s-servise__item animate-item-js" v-for="n in 2" :id="'target-servise' + ( n)"><picture> 
+<source    :srcset="'img/@2x/webp/servise-lg-'+ ( n) + '.webp'" type="image/webp" media="(min-width:576px)"/>
+<source    :srcset="'img/@1x/webp/servise-lg-'+ ( n) + '.webp'" type="image/webp"/>
+<source    :srcset="'img/@2x/servise-lg-' + ( n) + '.png'" type="image/png'" media="(min-width:576px)"/>
+<source    :srcset="'img/@1x/servise-lg-'+( n)+ '.png'" type="image/png'"/>
+<img    :src="'img/@2x/servise-lg-'+( n)+ '.png'" alt=""/>
 </picture> 
 								</div>
 							</div><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
@@ -102,21 +104,21 @@
 					</section>
 					<!-- end s-servise-->
 					<!-- start s-servise-->
-					<section class="s-servise section swiper-slide" id="content" data-hash="content">
+					<section class="s-servise section swiper-slide s-servise s-servise--content" id="content" data-hash="content">
 						<div class="container">
 							<h2>Услуги</h2>
 							<div class="s-servise__sub-title">Content
 							</div>
 							<ul>
-								<li v-for="servise in servises2" :key="servise.text"><img class="swiper-lazy" src="#" :data-src="imgSRc+ '/servise-' + servise.img + '.png'" alt=""/><span>{{servise.text}}</span></li>
+								<li v-for="servise in servises2" :key="servise.text"><img class="swiper-lazy" :src="imgSRc+ '/servise-' + servise.img + '.png'" alt=""/><span>{{servise.text}}</span></li>
 							</ul>
 							<div class="s-servise__wrap">
-								<div class="s-servise__item s-servise__item--2" v-for="n in 1" :id="'target-servise2' + ( n)"><picture> 
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/webp/servise-lg-'+ ( 3) + '.webp'" type="image/webp" media="(min-width:576px)"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/webp/servise-lg-'+ ( 3) + '.webp'" type="image/webp"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/servise-lg-' + ( 3) + '.png'" type="image/png'" media="(min-width:576px)"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/servise-lg-'+( 3)+ '.png'" type="image/png'"/>
-<img class="swiper-lazy" src="#" :data-src="'img/@2x/servise-lg-'+( 3)+ '.png'" alt=""/>
+								<div class="s-servise__item s-servise__item--2 animate-item-js" v-for="n in 1" :id="'target-servise2' + ( n)"><picture> 
+<source    :srcset="'img/@2x/webp/servise-lg-'+ ( 3) + '.webp'" type="image/webp" media="(min-width:576px)"/>
+<source    :srcset="'img/@1x/webp/servise-lg-'+ ( 3) + '.webp'" type="image/webp"/>
+<source    :srcset="'img/@2x/servise-lg-' + ( 3) + '.png'" type="image/png'" media="(min-width:576px)"/>
+<source    :srcset="'img/@1x/servise-lg-'+( 3)+ '.png'" type="image/png'"/>
+<img    :src="'img/@2x/servise-lg-'+( 3)+ '.png'" alt=""/>
 </picture> 
 								</div>
 							</div><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
@@ -124,21 +126,21 @@
 					</section>
 					<!-- end s-servise-->
 					<!-- start s-servise-->
-					<section class="s-servise section swiper-slide" id="projectManagement" data-hash="projectManagement">
+					<section class="s-servise section swiper-slide s-servise s-servise--project-management" id="project-management" data-hash="project-management">
 						<div class="container">
 							<h2>Услуги</h2>
 							<div class="s-servise__sub-title">Project management
 							</div>
 							<ul>
-								<li v-for="servise in servises3" :key="servise.text"><img class="swiper-lazy" src="#" :data-src="imgSRc+ '/servise-' + servise.img + '.png'" alt=""/><span>{{servise.text}}</span></li>
+								<li v-for="servise in servises3" :key="servise.text"><img class="swiper-lazy" :src="imgSRc+ '/servise-' + servise.img + '.png'" alt=""/><span>{{servise.text}}</span></li>
 							</ul>
 							<div class="s-servise__wrap">
-								<div class="s-servise__item s-servise__item--3" v-for="n in 1" :id="'target-servise3' + ( n)"><picture> 
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/webp/servise-lg-'+ ( 4) + '.webp'" type="image/webp" media="(min-width:576px)"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/webp/servise-lg-'+ ( 4) + '.webp'" type="image/webp"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@2x/servise-lg-' + ( 4) + '.png'" type="image/png'" media="(min-width:576px)"/>
-<source class="swiper-lazy" srcset="#" :data-srcset="'img/@1x/servise-lg-'+( 4)+ '.png'" type="image/png'"/>
-<img class="swiper-lazy" src="#" :data-src="'img/@2x/servise-lg-'+( 4)+ '.png'" alt=""/>
+								<div class="s-servise__item s-servise__item--3 animate-item-js" v-for="n in 1" :id="'target-servise3' + ( n)"><picture> 
+<source    :srcset="'img/@2x/webp/servise-lg-'+ ( 4) + '.webp'" type="image/webp" media="(min-width:576px)"/>
+<source    :srcset="'img/@1x/webp/servise-lg-'+ ( 4) + '.webp'" type="image/webp"/>
+<source    :srcset="'img/@2x/servise-lg-' + ( 4) + '.png'" type="image/png'" media="(min-width:576px)"/>
+<source    :srcset="'img/@1x/servise-lg-'+( 4)+ '.png'" type="image/png'"/>
+<img    :src="'img/@2x/servise-lg-'+( 4)+ '.png'" alt=""/>
 </picture> 
 								</div>
 							</div><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
@@ -146,12 +148,12 @@
 					</section>
 					<!-- end s-servise-->
 					<!-- start s-clients-->
-					<section class="s-clients section swiper-slide" id="s-clients" data-hash="clients">
+					<section class="s-clients section swiper-slide" id="clients" data-hash="clients">
 						<div class="container">
 							<h2>КЛИЕНТЫ</h2>
 							<div class="row row-cols-md-3 text-center justify-content-between">
-								<div class="s-clients__col col-auto" v-for="client in clients" :key="client.text">
-									<div class="s-clients__img-wrap"><img class="res-i swiper-lazy" src="#" :data-src="'img/svg/' + client.img" alt=""/>
+								<div class="s-clients__col col-sm-auto col-6" v-for="client in clients" :key="client.text">
+									<div class="s-clients__img-wrap"><img class="res-i" :src="'img/svg/' + client.img" alt=""/>
 									</div>
 									<div class="s-clients__title">{{client.text}}
 									</div>
@@ -161,13 +163,13 @@
 					</section>
 					<!-- end s-clients-->
 					<!-- start s-documents-->
-					<section class="s-documents section swiper-slide" id="s-documents" data-hash="documents">
+					<section class="s-documents section swiper-slide" id="documents" data-hash="documents">
 						<div class="container">
 							<h2>Важные документы</h2>
 							<div class="s-documents__row-wrap">
 								<div class="row row-cols-md-3">
 									<div class="s-documents__col col-xxl-4 col-md col-sm-6" v-for="document in documents" :key="document.text">
-										<div class="s-documents__img-wrap"><img class="res-i swiper-lazy" src="#" data-src="img/svg/doc.svg" alt=""/>
+										<div class="s-documents__img-wrap"><img class="res-i" src="img/svg/doc.svg" alt=""/>
 										</div>
 										<div class="s-documents__title">{{document.text}}
 										</div>
@@ -185,7 +187,7 @@
 							<h2>Контакты</h2>
 							<div class="s-contact__center">
 								<div class="row">
-									<div class="s-contact__col col-6" v-for="contact in contactsOffice" :key="contact.title">
+									<div class="s-contact__col col-sm-6" v-for="contact in contactsOffice" :key="contact.title">
 										<div class="h5 mb-4 strong">{{contact.title}}</div>
 										<p class="fw-400"> {{contact.text}}</p>
 									</div>
@@ -198,7 +200,7 @@
 								</div>
 							</div>
 							<div class="s-contact__wrap">
-								<div class="s-contact__item" v-for="n in 5" :id="'target-contact' + (6 - n)"><picture> 
+								<div class="s-contact__item animate-item-js" v-for="n in 5" :id="'target-contact' + (6 - n)"><picture> 
 <source :srcset="'img/@2x/webp/elem-'+ (6 - n) + '.webp'" type="image/webp" media="(min-width:576px)"/>
 <source :srcset="'img/@1x/webp/elem-'+ (6 - n) + '.webp'" type="image/webp"/>
 <source :srcset="'img/@2x/elem-' + (6 - n) + '.png'" type="image/png" media="(min-width:576px)"/>
@@ -212,10 +214,8 @@
 					<!-- end s-contact-->
 				</div>
 			</div>
-			<footer class="footer block-with-lazy">
-				<div class="container">
-					<p>footer</p>
-				</div>
+			<footer class="footer">
+				<div class="container">© 2020</div>
 			</footer>
 		</div>
 		<div class="d-none">
@@ -232,19 +232,25 @@
 						</div>
 						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
 					</div>
-					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="text" required="required"/> 
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="name" placeholder="Ваше Имя" name="name" required="required"/> 
 					</div>
 					<!-- +e.input-wrap-->
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
 					</div>
-					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
-					<div class="form-wrap__polite">
-						<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
-						</label>
+					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Отправить"/>
+					<div class="form-wrap__polite"><small class="form-wrap__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
 					</div>
 				</form>
 			</div>
 			<!-- #modal-call-->
+			<div class="  modal-win modal-form" id="modal-thanks">
+				<div class="text-center">
+					<div class="title h3 ttu">Спасибо!
+					</div>
+					<p>Мы скоро с Вами свяжемся</p>
+				</div>
+			</div>
+			<!-- #modal-thanks-->
 		</div>
 		<!-- modal-->
 		<script src="libs/vue/vue.min.js"></script>
@@ -258,6 +264,7 @@
 		<!-- полифил для object-fit-->
 		<script src="libs/object-fit-images/ofi.min.js"></script>
 		<!-- modal libs-->
+		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
 		<script src="libs/swiper/js/swiper.min.js"> </script>

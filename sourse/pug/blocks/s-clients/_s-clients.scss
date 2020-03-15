@@ -3,14 +3,26 @@
 	padding-bottom: 0;
 
 	&__col {
-		margin-bottom: calc(#{rem(30)} + 5vh);
+		margin-bottom: calc(#{rem(10)} + 8vh);
 	}
 
 	&__img-wrap {
-		height: rem(210);
 		vertical-align: middle;
-		line-height: rem(201);
-		margin-bottom: rem(30);
+		margin-bottom: 2vh;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media-breakpoint-up(xxl) {
+
+			line-height: rem(201);
+			height: rem(210);
+			max-width: rem(160);
+		}
+
+		height: rem(210 * .6);
+		line-height: rem(201 * .6);
+		max-width: rem(160 * .6);
+
 
 		img {
 			max-height: 100%;

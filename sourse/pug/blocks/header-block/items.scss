@@ -1,9 +1,32 @@
  .header-block {
+ 	&__inner {
+ 		position: relative;
+ 		z-index: 10;
+ 	}
 
  	&__item {
- 		position: fixed;
+
+ 		@include media-breakpoint-up(lg) {}
+
+ 		@include media-breakpoint-down(md) {}
+
+ 		@include media-breakpoint-up(lg) {
+
+ 			position: fixed;
+ 		}
+
+ 		@include media-breakpoint-up(sm) {
+
+ 			left: calc(50vw + #{rem(200px)});
+ 		}
+
+ 		left: rem(250px);
+ 		// left: calc(55vw + #{rem(200px)});
+
+ 		@include media-breakpoint-down(md) {}
+
+ 		position: absolute;
  		top: 55vh;
- 		left: calc(50vw + #{rem(200px)});
  		z-index: 2;
  		@include mt;
  		pointer-events: none;
@@ -36,8 +59,12 @@
  		}
 
  		&:nth-child(5) {
- 			width: rem(128px);
- 			height: rem(123px);
+ 			@include media-breakpoint-up(sm) {
+
+ 				width: rem(128px);
+ 				height: rem(123px);
+ 			}
+
  			top: 66vh;
 
  			&::before {
@@ -47,8 +74,11 @@
  		}
 
  		&:nth-child(4) {
- 			width: rem(240px);
- 			height: rem(234px);
+ 			@include media-breakpoint-up(sm) {
+
+ 				width: rem(240px);
+ 				height: rem(234px);
+ 			}
 
  			top: 37vh;
  			margin-left: rem(40);
@@ -61,22 +91,34 @@
  		}
 
  		&:nth-child(3) {
- 			width: rem(639px);
- 			height: rem(613px);
+ 			@include media-breakpoint-up(sm) {
+
+ 				width: rem(639px);
+ 				height: rem(613px);
+ 			}
+
  			top: 45vh;
  			margin-left: rem(20);
  		}
 
  		&:nth-child(2) {
- 			width: rem(301px);
- 			height: rem(264px);
+ 			@include media-breakpoint-up(sm) {
+
+ 				width: rem(301px);
+ 				height: rem(264px);
+ 			}
+
  			top: 32vh;
  			margin-left: rem(160);
  		}
 
  		&:nth-child(1) {
- 			width: rem(306px);
- 			height: rem(362px);
+ 			@include media-breakpoint-up(sm) {
+
+ 				width: rem(306px);
+ 				height: rem(362px);
+ 			}
+
  			top: 15vh;
  			margin-left: rem(-70);
 

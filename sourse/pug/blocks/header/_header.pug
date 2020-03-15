@@ -27,11 +27,11 @@ mixin header()
 							.d-lg-none.pl-3
 								+e.tel(href="#") +7 495 336 55 44
 								br
-								a.btn.btn-outline-danger.mt-4(href="#") Стать клиетом
+								a.btn.btn-outline-danger.mt-4.link-modal(href="#modal-call") Стать клиетом
 				+e.col.col-auto
 					+e.tel(href="#") +7 495 336 55 44
 				+e.col.col-auto.d-none.d-md-block
-					+e.btn(href="#") Стать клиетом
+					+e.btn.link-modal(href="#modal-call") Стать клиетом
 				+e.col.col-auto.d-lg-none
 					+b.toggle-menu-mobile--js
 						span

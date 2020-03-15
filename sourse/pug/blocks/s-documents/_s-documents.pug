@@ -1,13 +1,13 @@
 mixin s-documents()
 	// start s-documents
-	+b.SECTION.s-documents.section.swiper-slide#s-documents&attributes(attributes)
+	+b.SECTION.s-documents.section.swiper-slide#documents&attributes(attributes)
 		.container
 			h2 Важные документы
 			+e.row-wrap
 				.row.row-cols-md-3
 					+e.col.col-xxl-4.col-md.col-sm-6(v-for="document in documents"  :key="document.text")
 						+e.img-wrap
-							img.res-i.swiper-lazy(src="#" data-src="img/svg/doc.svg", alt="")
+							img.res-i(src="img/svg/doc.svg", alt="")
 						+e.title {{document.text}}
 						+e.btn(:href="document.FilePath") Скачать документ ({{document.fileSize}})
 	// end s-documents

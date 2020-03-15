@@ -89,6 +89,7 @@ const JSCCommon = {
 };
 function eventHandler() {
 	JSCCommon.mobileMenu();
+	JSCCommon.modalCall();
 	// JSCCommon.inputMask();
 	// полифил для object-fit
 	objectFitImages();
@@ -97,8 +98,6 @@ function eventHandler() {
 	document.createElement("picture");
 	// для свг
 	svg4everybody({});
-
-
 
 
 	function onMouseWheel(e) {
@@ -119,35 +118,57 @@ function eventHandler() {
 	});
 	// var controller = new ScrollMagic.Controller();
 
-	let mainSlider = new Swiper('.main-slider-js', {
-		slidesPerView: "auto",
-		freeMode: true,
-		keyboard: true,
-		speed: 1600,
-		lazy: {
-			loadPrevNext: true,
-			loadPrevNextAmount: 2
-		},
-		// initialSlide: 2,
-		hashNavigation: {
-			replaceState: true,
-		},
-		mousewheel: {
-			sensitivity: 1.5,
-			// releaseOnEdges: true,
-			// forceToAxis: true,
 
-		},
-		// initialSlide:6,
-		on: {
-			init: function () {
-				/* do something */
-				$(".moon-block").addClass("moon-block--active");
-			},
+	var mainSlider = undefined;
+	function heightses() {
+
+		const w = $(window).width();
+		var screenWidth = $(window).width();
+		// конец добавил
+		if (screenWidth > 992 && mainSlider == undefined) {
+			let mainSlider = new Swiper('.main-slider-js', {
+
+				slidesPerView: "auto",
+				freeMode: true,
+				keyboard: true,
+				speed: 1600,
+				lazy: {
+					loadPrevNext: true,
+					loadPrevNextAmount: 4
+				},
+				// initialSlide: 2,
+				hashNavigation: {
+					replaceState: true,
+				},
+				mousewheel: {
+					sensitivity: 1.5,
+					// releaseOnEdges: true,
+					// forceToAxis: true,
+
+				},
+
+			});
 		}
+		else if (screenWidth < 991 && mainSlider != undefined) {
+			mainSlider.destroy();
+			mainSlider = undefined;
+			jQuery('.swiper-wrapper').removeAttr('style');
+			jQuery('.swiper-slide').removeAttr('style');
+
+		}
+	}
+
+	$(window).resize(function () {
+		heightses();
+
 	});
 
+	heightses();
+
+
+
 	var width = $('#header-block').width();
+	var height = $('#header-block').height();
 	let offsetEl = width * .52
 	var durationEl = ($(window).width() - offsetEl) * 1.2;
 	// build tween
@@ -155,8 +176,8 @@ function eventHandler() {
 
 	let tweens = [
 		TweenMax.to("#target1", 100, {
-			x: -800,
-			y: -800,
+			x: '-90%',
+			y: '-290%',
 			opacity: 0,
 			scale: 0.5,
 			ease: "elastic",
@@ -164,8 +185,8 @@ function eventHandler() {
 		}
 		),
 		TweenMax.to("#target2", 100, {
-			y: 10,
-			x: 500,
+			y: "10%",
+			x: "600%",
 			opacity: 0,
 			// scale: 0,
 			ease: "elastic",
@@ -173,8 +194,8 @@ function eventHandler() {
 		}
 		),
 		TweenMax.to("#target3", 100, {
-			x: -1800,
-			y: -50,
+			x: "-400%",
+			y: "10%",
 			rotation: 120,
 			opacity: 0,
 			scale: 0,
@@ -183,16 +204,16 @@ function eventHandler() {
 		}
 		),
 		TweenMax.to("#target4", 100, {
-			x: -800,
-			y: 1000,
+			x: "-350%",
+			y: "350%",
 			opacity: 0.5,
 			scale: 0.9,
 			ease: "elastic",
 		}
 		),
 		TweenMax.to("#target5", 100, {
-			x: -10,
-			y: -1000,
+			x: "-10%",
+			y: "-400%",
 			ease: "elastic",
 			rotation: 140,
 		}
@@ -211,8 +232,8 @@ function eventHandler() {
 
 	let tweensContact = [
 		TweenMax.from("#target-contact1", 100, {
-			x: -800,
-			y: -800,
+			x: "100%",
+			y: "-700%",
 			opacity: 0,
 			scale: 0.5,
 			ease: "elastic",
@@ -220,17 +241,17 @@ function eventHandler() {
 		}
 		),
 		TweenMax.from("#target-contact2", 100, {
-			y: -400,
-			x: -2400,
+			y: "-150%",
+			x: "-800%",
 			scale: 0.6,
 			ease: "elastic",
 			rotation: 90,
 		}
 		),
 		TweenMax.from("#target-contact3", 100, {
-			y: 10,
-			x: -2400,
-			rotation: 120,
+			y: "5%",
+			x: "-300%",
+			rotation: 240,
 
 			scale: 0.8,
 			ease: "elastic",
@@ -238,16 +259,16 @@ function eventHandler() {
 		}
 		),
 		TweenMax.from("#target-contact4", 100, {
-			yPercent: 200,
-
-			x: -2000,
+			// yPercent: 10,
+			y: "10%",
+			x: "-550%",
 			yPercent: 50,
 			rotation: 120,
 			scale: 0.5,
 		}
 		),
 		TweenMax.from("#target-contact5", 100, {
-			x: -2900,
+			x: "-700%",
 			yPercent: 50,
 			rotation: 120,
 			scale: 0.5,
@@ -265,15 +286,15 @@ function eventHandler() {
 	}
 	let tweensServises = [
 		TweenMax.to("#target-servise1", 11, {
-			x: -800,
-			y: 800,
+			x: "-100%",
+			y: "100%",
 			ease: "elastic",
 			rotation: 160,
 		}
 		),
 		TweenMax.to("#target-servise2", 11, {
-			x: 1000,
-			y: -2000,
+			x: "200%",
+			y: "-500%",
 			ease: "elastic",
 			// opacity: 0.5,
 			scale: 0.5,
@@ -296,7 +317,8 @@ function eventHandler() {
 
 		TweenMax.to("#target-servise21", 11, {
 			// x: 1000,
-			y: 800,
+			x: "-100%",
+			y: "-200%",
 			ease: "elastic",
 			// opacity: 0.5,
 			scale: 0.5,
@@ -318,8 +340,8 @@ function eventHandler() {
 	let tweensServises3 = [
 
 		TweenMax.to("#target-servise31", 11, {
-			x: 1000,
-			y: -2300,
+			x: "100%",
+			y: "-200%",
 			ease: "elastic",
 			// opacity: 0.5,
 			scale: 0.5,
@@ -331,7 +353,7 @@ function eventHandler() {
 
 	// build scene 
 	for (var i = 0, l = tweensServises3.length; i < l; i++) {
-		var scene = new ScrollMagic.Scene({ triggerElement: "#projectManagement", duration: durationEl, offset: offsetEl })
+		var scene = new ScrollMagic.Scene({ triggerElement: "#project-management", duration: durationEl, offset: offsetEl })
 			.setTween(tweensServises3[i])
 			// .addIndicators() // add indicators (requires plugin)
 			.addTo(controller);
@@ -340,9 +362,55 @@ function eventHandler() {
 
 
 
-}
 
+	var gets = (function () {
+		var a = window.location.search;
+		var b = new Object();
+		var c;
+		a = a.substring(1).split("&");
+		for (var i = 0; i < a.length; i++) {
+			c = a[i].split("=");
+			b[c[0]] = c[1];
+		}
+		return b;
+	})();
+	// form
+	$("form").submit(function (e) {
+		e.preventDefault();
+		const th = $(this);
+		var data = th.serialize();
+		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+		$.ajax({
+			url: 'action.php',
+			type: 'POST',
+			data: data,
+		}).done(function (data) {
 
+			$.fancybox.close();
+			$.fancybox.open({
+				src: '#modal-thanks',
+				type: 'inline'
+			});
+			// window.location.replace("/thanks.html");
+			setTimeout(function () {
+				// Done Functions
+				th.trigger("reset");
+				// $.magnificPopup.close();
+				// ym(53383120, 'reachGoal', 'zakaz');
+				// yaCounter55828534.reachGoal('zakaz');
+			}, 4000);
+		}).fail(function () { });
+	});
+
+	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+	if (isIE11) {
+		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
+
+	}
+};
 if (document.readyState !== 'loading') {
 	eventHandler();
 } else {

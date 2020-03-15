@@ -1,35 +1,3 @@
-// start .s-servise
-#visual {
-
-	&::before {
-		width: 120%;
-		background-color: rgba(160, 203, 225, 0.5);
-		clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
-		@include mt(.6);
-	}
-
-	&.swiper-slide-active {
-		&::before {
-
-			width: 130%;
-		}
-
-	}
-
-	z-index: 39;
-}
-
-#content {
-	z-index: 38;
-	background: rgba($color: #FCDD95, $alpha: .5);
-}
-
-#projectManagement {
-	z-index: 37;
-	background: rgba($color: #E3FCFC, $alpha: .5);
-
-}
-
 .s-servise {
 	position: relative;
 	z-index: 2;
@@ -52,13 +20,13 @@
 		font-weight: 800;
 		line-height: 0.91;
 		text-transform: uppercase;
-		margin-bottom: rem(42);
+		margin-bottom: 4vh;
 	}
 
 	ul {
-		padding-bottom: rem(40);
+		margin-bottom: 4vh;
 		// margin-bottom: auto;
-		min-height: rem(320);
+		min-height: rem(280);
 	}
 
 	li {
@@ -78,10 +46,20 @@
 
 
 	&__item {
-		position: fixed;
 		top: 55vh;
-		left: calc(120vw + #{rem(200px)});
-		z-index: 2;
+		position: absolute;
+
+		@include media-breakpoint-up(lg) {
+			position: fixed;
+
+			left: calc(120vw + #{rem(200px)});
+		}
+
+		left: calc(10vw + #{rem(200px)});
+
+		@include media-breakpoint-down(md) {}
+
+		z-index: -1;
 		@include mt;
 		pointer-events: none;
 
@@ -114,18 +92,26 @@
 
 
 		&:nth-child(1) {
-			width: rem(1317px);
-			height: rem(1348px);
+			@include media-breakpoint-up(sm) {
+
+				width: rem(1317px);
+				height: rem(1348px);
+				margin-left: rem(240);
+			}
+
 			top: 26vh;
-			margin-left: rem(240);
 			transform: rotate(15.849999999999994deg);
 		}
 
 		&:nth-child(2) {
-			width: rem(349px);
-			height: rem(417px);
+			@include media-breakpoint-up(sm) {
+
+				width: rem(349px);
+				height: rem(417px);
+				margin-left: rem(310);
+			}
+
 			top: 84vh;
-			margin-left: rem(310);
 
 			&::before {
 				width: 80%;
@@ -136,12 +122,21 @@
 		}
 
 		&--2 {
-			left: calc(220vw + #{rem(200px)});
-			width: rem(1791px);
-			height: rem(1779px);
+			@include media-breakpoint-up(lg) {
+
+				left: calc(220vw + #{rem(200px)});
+			}
+
+			@include media-breakpoint-up(sm) {
+
+				left: calc(20vw + #{rem(200px)});
+				width: rem(1791px);
+				height: rem(1779px);
+				margin-left: rem(310);
+			}
+
 			transform: rotate(-138.81deg);
 			top: 24vh;
-			margin-left: rem(310);
 
 			&::before {
 
@@ -151,19 +146,32 @@
 		}
 
 		&--3 {
-			left: calc(320vw + #{rem(200px)});
-			width: rem(1791px);
-			height: rem(1779px);
-			transform: rotate(141.19deg);
+			@include media-breakpoint-up(lg) {
+
+				left: calc(320vw + #{rem(200px)});
+			}
+
+			@include media-breakpoint-up(sm) {
+
+				left: calc(5vw + #{rem(200px)});
+				width: rem(1791px);
+				margin-left: rem(140);
+				height: rem(1779px);
+			}
+
+			margin-top: rem(150);
+			transform: rotate(161.19deg);
 			top: 20vh;
-			margin-left: rem(110);
 
-			&::before {
-				box-shadow: rem(1800px / 2) rem(1800px / 2) $h4-font-size rgba(0, 0, 0, 0.28);
+			@include media-breakpoint-up(lg) {
 
-				width: 50%;
-				height: 50%;
-				// box-shadow: rem(70px) rem(70px) $h4-font-size rgba(0, 0, 0, 0.28);
+				&::before {
+					box-shadow: rem(1800px / 2) rem(1800px / 2) $h4-font-size rgba(0, 0, 0, 0.28);
+
+					width: 50%;
+					height: 50%;
+					// box-shadow: rem(70px) rem(70px) $h4-font-size rgba(0, 0, 0, 0.28);
+				}
 			}
 		}
 
@@ -211,3 +219,36 @@
 }
 
 // end.s-servise
+
+
+// start .s-servise
+.s-servise--visual {
+
+	&::before {
+		width: 120%;
+		background-color: rgba(160, 203, 225, 0.5);
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
+		@include mt(.6);
+	}
+
+	&.swiper-slide-active {
+		&::before {
+
+			width: 130%;
+		}
+
+	}
+
+	z-index: 39;
+}
+
+.s-servise--content {
+	z-index: 38;
+	background: rgba($color: #FCDD95, $alpha: .5);
+}
+
+.s-servise--project-management {
+	z-index: 37;
+	background: rgba($color: #E3FCFC, $alpha: .5);
+
+}

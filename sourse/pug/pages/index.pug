@@ -16,11 +16,10 @@ block pagecontent
 	+header()
 	.main-slider-js.swiper-container#swiper-container
 		.swiper-wrapper#swiper-wrapper
-			.swiper-slide.trigger-slide#trigger.section
 			+header-block()(data-hash="main-section") 
-			+s-servise1(id="visual" data-hash="visual" )
-			+s-servise2(id="content" data-hash="content"  )
-			+s-servise3(id="projectManagement" data-hash="projectManagement"  )
+			+s-servise1(id="visual" data-hash="visual" class="s-servise--visual" )
+			+s-servise2(id="content" data-hash="content"  class="s-servise--content" )
+			+s-servise3(id="project-management" data-hash="project-management"  class="s-servise--project-management" )
 
 			+s-clients(data-hash="clients")
 			+s-documents(data-hash="documents")

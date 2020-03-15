@@ -1,8 +1,25 @@
 .footer {
 
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  @include media-breakpoint-up(md) {
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+  }
+
+  position: relative;
+  padding: rem(30) 0;
+
+  &::before {
+    content: '';
+    width: rem(512);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1px;
+    background-color: rgba($color: #333333, $alpha: .2);
+  }
 
   // 
   @include media-breakpoint-up(xl) {}

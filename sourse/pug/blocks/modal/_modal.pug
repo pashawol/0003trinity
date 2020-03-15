@@ -36,11 +36,18 @@ mixin modal()
 			.text-center
 				+e.title.h3.ttu Обратный звонок
 				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя")(required) 
+			+input("Ваше Имя",'name')(required) 
 			+input("Ваш телефон","tel")(required)
 			//- +input("email","Ваше email")(required)
 			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
+			+e.INPUT.btn(type="submit" value="Отправить") 
 			+polite()
 		// #modal-call
+		
+		div(id="modal-thanks" class="  modal-win modal-form" )
+			.text-center
+				+e.title.h3.ttu Спасибо!
+				p Мы скоро с Вами свяжемся
+		// #modal-thanks
+
 	// modal

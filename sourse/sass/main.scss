@@ -11,9 +11,9 @@ $output-bourbon-deprecation-warnings: false;
 // Option B: Include parts of Bootstrap
 
 
+$rfs-breakpoint: 1760px !default;
 @import "vars";
 @import "./node_modules/bootstrap/scss/vendor/rfs";
-$rfs-breakpoint: 1760px !default;
 @import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/mixins";

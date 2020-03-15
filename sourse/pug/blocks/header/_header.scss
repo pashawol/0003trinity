@@ -9,9 +9,10 @@
   width: 100%;
 
   // 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(xxxl) {
     top: calc(#{rem(15)} + 2vh);
   }
+
 
   @include media-breakpoint-up(lg) {
     top: calc(#{rem(15)} + 1vh);
