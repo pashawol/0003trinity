@@ -101,9 +101,7 @@ function eventHandler() {
 
 	document.createElement("picture"); // для свг
 
-	svg4everybody({}); // добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Frame9.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	svg4everybody({});
 
 	function onMouseWheel(e) {
 		clearTimeout($.data(this, 'timer'));
