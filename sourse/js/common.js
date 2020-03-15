@@ -235,7 +235,7 @@ function eventHandler() {
 
 			scale: 0.8,
 			ease: "elastic",
-			rotation: 360,
+			// rotation: 260,
 		}
 		),
 		TweenMax.from("#target-contact4", 10, {

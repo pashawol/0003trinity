@@ -92,7 +92,7 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _TweenMax$from2;
+	var _TweenMax$from;
 
 	JSCCommon.mobileMenu(); // JSCCommon.inputMask();
 	// полифил для object-fit
@@ -210,16 +210,17 @@ function eventHandler() {
 		scale: 0.6,
 		ease: "elastic",
 		rotation: 90
-	}), TweenMax.from("#target-contact3", 10, _defineProperty({
+	}), TweenMax.from("#target-contact3", 10, {
 		y: 10,
 		x: -2400,
 		rotation: 120,
 		scale: 0.8,
-		ease: "elastic"
-	}, "rotation", 360)), TweenMax.from("#target-contact4", 10, (_TweenMax$from2 = {
+		ease: "elastic" // rotation: 260,
+
+	}), TweenMax.from("#target-contact4", 10, (_TweenMax$from = {
 		yPercent: 200,
 		x: -2000
-	}, _defineProperty(_TweenMax$from2, "yPercent", 50), _defineProperty(_TweenMax$from2, "rotation", 120), _defineProperty(_TweenMax$from2, "scale", 0.5), _TweenMax$from2)), TweenMax.from("#target-contact5", 10, {
+	}, _defineProperty(_TweenMax$from, "yPercent", 50), _defineProperty(_TweenMax$from, "rotation", 120), _defineProperty(_TweenMax$from, "scale", 0.5), _TweenMax$from)), TweenMax.from("#target-contact5", 10, {
 		x: -2900,
 		yPercent: 50,
 		rotation: 120,
