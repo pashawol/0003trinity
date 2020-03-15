@@ -126,6 +126,7 @@ function eventHandler() {
 		speed: 1600,
 		lazy: {
 			loadPrevNext: true,
+			loadPrevNextAmount: 2
 		},
 		// initialSlide: 2,
 		hashNavigation: {

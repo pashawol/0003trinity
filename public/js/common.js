@@ -126,7 +126,8 @@ function eventHandler() {
 		keyboard: true,
 		speed: 1600,
 		lazy: {
-			loadPrevNext: true
+			loadPrevNext: true,
+			loadPrevNextAmount: 2
 		},
 		// initialSlide: 2,
 		hashNavigation: {
