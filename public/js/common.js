@@ -149,37 +149,37 @@ function eventHandler() {
 	});
 	var width = $('#header-block').width();
 	var offsetEl = width * .52;
-	var durationEl = ($(window).width() - offsetEl) * .9; // build tween
+	var durationEl = ($(window).width() - offsetEl) * 1.2; // build tween
 	// main animate
 
-	var tweens = [TweenMax.to("#target1", 1, {
+	var tweens = [TweenMax.to("#target1", 100, {
 		x: -800,
 		y: -800,
 		opacity: 0,
 		scale: 0.5,
 		ease: "elastic",
 		rotation: 60
-	}), TweenMax.to("#target2", 1, {
+	}), TweenMax.to("#target2", 100, {
 		y: 10,
 		x: 500,
 		opacity: 0,
 		// scale: 0,
 		ease: "elastic",
 		rotation: 30
-	}), TweenMax.to("#target3", 10, _defineProperty({
+	}), TweenMax.to("#target3", 100, _defineProperty({
 		x: -1800,
 		y: -50,
 		rotation: 120,
 		opacity: 0,
 		scale: 0,
 		ease: "elastic"
-	}, "rotation", 40)), TweenMax.to("#target4", 1, {
+	}, "rotation", 40)), TweenMax.to("#target4", 100, {
 		x: -800,
 		y: 1000,
 		opacity: 0.5,
 		scale: 0.9,
 		ease: "elastic"
-	}), TweenMax.to("#target5", 1, {
+	}), TweenMax.to("#target5", 100, {
 		x: -10,
 		y: -1000,
 		ease: "elastic",
@@ -197,30 +197,30 @@ function eventHandler() {
 	// contact animate
 
 
-	var tweensContact = [TweenMax.from("#target-contact1", 10, {
+	var tweensContact = [TweenMax.from("#target-contact1", 100, {
 		x: -800,
 		y: -800,
 		opacity: 0,
 		scale: 0.5,
 		ease: "elastic",
 		rotation: 60
-	}), TweenMax.from("#target-contact2", 10, {
+	}), TweenMax.from("#target-contact2", 100, {
 		y: -400,
 		x: -2400,
 		scale: 0.6,
 		ease: "elastic",
 		rotation: 90
-	}), TweenMax.from("#target-contact3", 10, {
+	}), TweenMax.from("#target-contact3", 100, {
 		y: 10,
 		x: -2400,
 		rotation: 120,
 		scale: 0.8,
 		ease: "elastic" // rotation: 260,
 
-	}), TweenMax.from("#target-contact4", 10, (_TweenMax$from = {
+	}), TweenMax.from("#target-contact4", 100, (_TweenMax$from = {
 		yPercent: 200,
 		x: -2000
-	}, _defineProperty(_TweenMax$from, "yPercent", 50), _defineProperty(_TweenMax$from, "rotation", 120), _defineProperty(_TweenMax$from, "scale", 0.5), _TweenMax$from)), TweenMax.from("#target-contact5", 10, {
+	}, _defineProperty(_TweenMax$from, "yPercent", 50), _defineProperty(_TweenMax$from, "rotation", 120), _defineProperty(_TweenMax$from, "scale", 0.5), _TweenMax$from)), TweenMax.from("#target-contact5", 100, {
 		x: -2900,
 		yPercent: 50,
 		rotation: 120,

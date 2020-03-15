@@ -150,12 +150,12 @@ function eventHandler() {
 
 	var width = $('#header-block').width();
 	let offsetEl = width * .52
-	var durationEl = ($(window).width() - offsetEl) * .9;
+	var durationEl = ($(window).width() - offsetEl) * 1.2;
 	// build tween
 	// main animate
 
 	let tweens = [
-		TweenMax.to("#target1", 1, {
+		TweenMax.to("#target1", 100, {
 			x: -800,
 			y: -800,
 			opacity: 0,
@@ -164,7 +164,7 @@ function eventHandler() {
 			rotation: 60,
 		}
 		),
-		TweenMax.to("#target2", 1, {
+		TweenMax.to("#target2", 100, {
 			y: 10,
 			x: 500,
 			opacity: 0,
@@ -173,7 +173,7 @@ function eventHandler() {
 			rotation: 30,
 		}
 		),
-		TweenMax.to("#target3", 10, {
+		TweenMax.to("#target3", 100, {
 			x: -1800,
 			y: -50,
 			rotation: 120,
@@ -183,7 +183,7 @@ function eventHandler() {
 			rotation: 40,
 		}
 		),
-		TweenMax.to("#target4", 1, {
+		TweenMax.to("#target4", 100, {
 			x: -800,
 			y: 1000,
 			opacity: 0.5,
@@ -191,7 +191,7 @@ function eventHandler() {
 			ease: "elastic",
 		}
 		),
-		TweenMax.to("#target5", 1, {
+		TweenMax.to("#target5", 100, {
 			x: -10,
 			y: -1000,
 			ease: "elastic",
@@ -211,7 +211,7 @@ function eventHandler() {
 	// contact animate
 
 	let tweensContact = [
-		TweenMax.from("#target-contact1", 10, {
+		TweenMax.from("#target-contact1", 100, {
 			x: -800,
 			y: -800,
 			opacity: 0,
@@ -220,7 +220,7 @@ function eventHandler() {
 			rotation: 60,
 		}
 		),
-		TweenMax.from("#target-contact2", 10, {
+		TweenMax.from("#target-contact2", 100, {
 			y: -400,
 			x: -2400,
 			scale: 0.6,
@@ -228,7 +228,7 @@ function eventHandler() {
 			rotation: 90,
 		}
 		),
-		TweenMax.from("#target-contact3", 10, {
+		TweenMax.from("#target-contact3", 100, {
 			y: 10,
 			x: -2400,
 			rotation: 120,
@@ -238,7 +238,7 @@ function eventHandler() {
 			// rotation: 260,
 		}
 		),
-		TweenMax.from("#target-contact4", 10, {
+		TweenMax.from("#target-contact4", 100, {
 			yPercent: 200,
 
 			x: -2000,
@@ -247,7 +247,7 @@ function eventHandler() {
 			scale: 0.5,
 		}
 		),
-		TweenMax.from("#target-contact5", 10, {
+		TweenMax.from("#target-contact5", 100, {
 			x: -2900,
 			yPercent: 50,
 			rotation: 120,

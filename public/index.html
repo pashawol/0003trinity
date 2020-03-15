@@ -20,7 +20,6 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
-		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body id="container1"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
@@ -187,7 +186,7 @@
 							<div class="s-contact__center">
 								<div class="row">
 									<div class="s-contact__col col-6" v-for="contact in contactsOffice" :key="contact.title">
-										<div class="h5 mb-4 fw-600">{{contact.title}}</div>
+										<div class="h5 mb-4 strong">{{contact.title}}</div>
 										<p class="fw-400"> {{contact.text}}</p>
 									</div>
 								</div>
@@ -259,7 +258,6 @@
 		<!-- полифил для object-fit-->
 		<script src="libs/object-fit-images/ofi.min.js"></script>
 		<!-- modal libs-->
-		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
 		<script src="libs/swiper/js/swiper.min.js"> </script>

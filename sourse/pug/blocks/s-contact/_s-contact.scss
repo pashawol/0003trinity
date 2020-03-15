@@ -4,6 +4,10 @@
 		flex-direction: column;
 	}
 
+	p {
+		font-weight: 400;
+	}
+
 	&__center {
 		flex-grow: 1;
 		display: flex;
