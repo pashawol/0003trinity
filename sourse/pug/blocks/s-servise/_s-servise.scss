@@ -11,6 +11,8 @@
 		right: 0%;
 		display: block;
 		overflow: hidden;
+		width: 100%;
+		transform: skewX(10deg);
 
 	}
 
@@ -227,8 +229,6 @@
 	&::before {
 		width: 120%;
 		background-color: rgba(160, 203, 225, 0.5);
-		clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
-		@include mt(.6);
 	}
 
 	&.swiper-slide-active {
@@ -244,11 +244,19 @@
 
 .s-servise--content {
 	z-index: 38;
-	background: rgba($color: #FCDD95, $alpha: .5);
+
+	&::before {
+
+		background: rgba($color: #FCDD95, $alpha: .5);
+	}
 }
 
 .s-servise--project-management {
 	z-index: 37;
-	background: rgba($color: #E3FCFC, $alpha: .5);
+
+	&::before {
+
+		background: rgba($color: #E3FCFC, $alpha: .5);
+	}
 
 }
