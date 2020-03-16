@@ -141,7 +141,7 @@ function eventHandler() {
 					replaceState: true
 				},
 				mousewheel: {
-					sensitivity: 1.5 // releaseOnEdges: true,
+					sensitivity: 2.5 // releaseOnEdges: true,
 					// forceToAxis: true,
 
 				}
