@@ -6,6 +6,9 @@ include ../blocks/s-contact/_s-contact.pug
 include ../blocks/s-servise/_s-servise.pug
 include ../blocks/s-clients/_s-clients.pug
 include ../blocks/s-documents/_s-documents.pug
+include ../blocks/sHello/_sHello.pug
+include ../blocks/sStrengths/_sStrengths.pug
+include ../blocks/sCases/_sCases.pug
 
 block variables
 	- let  mainPage= null
@@ -17,11 +20,14 @@ block pagecontent
 	.main-slider-js.swiper-container#swiper-container
 		.swiper-wrapper#swiper-wrapper
 			+header-block()(data-hash="main-section") 
+			+sHello()(data-hash="sHello") 
+			+sStrengths()(data-hash="sStrengths") 
 			+s-servise1(id="visual" data-hash="visual" class="s-servise--visual" )
 			+s-servise2(id="content" data-hash="content"  class="s-servise--content" )
 			+s-servise3(id="project-management" data-hash="project-management"  class="s-servise--project-management" )
 
-			+s-clients(data-hash="clients")
+			+sCases(data-hash="sCases")
+			//- +s-clients(data-hash="clients")
 			+s-documents(data-hash="documents")
 			+s-contact()(data-hash="contacts") 
 	+footer

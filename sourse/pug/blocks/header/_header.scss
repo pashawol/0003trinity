@@ -73,6 +73,17 @@
     }
   }
 
+  .lang {
+
+    @include roww(20 / 2);
+    font-weight: bold;
+
+    a {
+      &:not(.text-danger) {
+        opacity: 0.52;
+      }
+    }
+  }
 
 
   &__tel {

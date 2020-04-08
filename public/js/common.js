@@ -130,7 +130,7 @@ function eventHandler() {
 				slidesPerView: "auto",
 				freeMode: true,
 				keyboard: true,
-				speed: 1600,
+				// speed: 600,
 				//...
 				lazy: {
 					loadPrevNext: true,
@@ -141,8 +141,8 @@ function eventHandler() {
 					replaceState: true
 				},
 				mousewheel: {
-					sensitivity: 2.5 // releaseOnEdges: true,
-					// forceToAxis: true,
+					// sensitivity: 2.5,
+					releaseOnEdges: true // forceToAxis: true,
 
 				}
 			});
@@ -334,6 +334,25 @@ function eventHandler() {
 			duration: durationEl,
 			offset: offsetEl
 		}).setTween(tweensServises3[i]) // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	} // /servises2 animate
+
+
+	var tweensHello = [TweenMax.to("#title-block", 11, {
+		x: "100vw" // ease: "elastic",
+
+	}), TweenMax.to("#btn", 1, {
+		x: "100vw" // ease: "elastic",
+
+	})]; // build scene 
+
+	for (var i = 0, l = tweensHello.length; i < l; i++) {
+		var duration = $("#sHello").width();
+		var scene = new ScrollMagic.Scene({
+			triggerElement: "#sHello",
+			duration: duration * .5,
+			offset: duration / 4
+		}).setTween(tweensHello[i]).addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
 	} // /servises2 animate
 

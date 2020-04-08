@@ -54,7 +54,7 @@
 		@include media-breakpoint-up(lg) {
 			position: fixed;
 
-			left: calc(120vw + #{rem(200px)});
+			left: calc(100vw * 3 + 120vw + #{rem(200px)});
 		}
 
 		left: calc(10vw + #{rem(200px)});
@@ -126,7 +126,7 @@
 		&--2 {
 			@include media-breakpoint-up(lg) {
 
-				left: calc(220vw + #{rem(200px)});
+				left: calc(100vw * 5 + 20vw + #{rem(200px)});
 			}
 
 			@include media-breakpoint-up(sm) {
@@ -150,7 +150,7 @@
 		&--3 {
 			@include media-breakpoint-up(lg) {
 
-				left: calc(320vw + #{rem(200px)});
+				left: calc(100vw * 6 + 20vw + #{rem(200px)});
 			}
 
 			@include media-breakpoint-up(sm) {
@@ -227,14 +227,14 @@
 .s-servise--visual {
 
 	&::before {
-		width: 120%;
+		// width: 120%;
 		background-color: rgba(160, 203, 225, 0.5);
 	}
 
 	&.swiper-slide-active {
 		&::before {
 
-			width: 130%;
+			// width: 130%;
 		}
 
 	}

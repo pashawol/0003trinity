@@ -107,6 +107,26 @@ var app = new Vue({
 		}, {
 			title: 'Электронная почта',
 			text: '<a href="mailto:sampl@sample.com">sampl@sample.com</a>'
+		}],
+		hellos1: [{
+			text: 'оригинальные мысли',
+			img: 1
+		}, {
+			text: 'логика изложения',
+			img: 2
+		}, {
+			text: 'грамотный язык',
+			img: 3
+		}],
+		hellos2: [{
+			text: 'эстетическая привлекательность',
+			img: 1
+		}, {
+			text: 'удобство использования',
+			img: 2
+		}, {
+			text: 'современность подачи',
+			img: 3
 		}]
 	}
 });

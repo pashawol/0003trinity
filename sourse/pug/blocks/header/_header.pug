@@ -14,20 +14,31 @@ mixin header()
 						+e.inner  
 							ul
 								li
+									a(href="#header-block" data-slide="0") Главное 
+								li
 									a(href="#visual" data-slide="1") Услуги
 								
 								li
-									a(href="#clients" data-slide="4") Клиенты
+									a(href="#clients" data-slide="2") Портфолио
+								
+								//- li
+								//- 	a(href="#clients" data-slide="4") Клиенты
 								
 								li
-									a(href="#documents" data-slide="5") Документы
+									a(href="#documents" data-slide="3") Документы
 								
 								li
-									a(href="#contacts" data-slide="6") Контакты
+									a(href="#contacts" data-slide="4") Контакты
 							.d-lg-none.pl-3
 								+e.tel(href="#") +7 495 336 55 44
 								br
 								a.btn.btn-outline-danger.mt-4.link-modal(href="#modal-call") Стать клиетом
+				+e.col.col-auto
+					ul.ttu.lang
+						li
+							a(href="#") Ru
+						li
+							a(href="#").text-danger EN
 				+e.col.col-auto
 					+e.tel(href="#") +7 495 336 55 44
 				+e.col.col-auto.d-none.d-md-block

@@ -1,0 +1,39 @@
+mixin sHello()
+	// start sHello
+	+b.SECTION.sHello.section.swiper-slide#sHello&attributes(attributes)
+		+e.title-block#title-block
+			.container
+				h2 Здравствуйте
+				+e.sub-title Вы&nbsp;зашли на&nbsp;сайт агентства &laquo;Тринити Медиа&raquo;. Мы&nbsp;&mdash; это группа профессионалов по&nbsp;созданию контента и&nbsp;оформлению. Наша задача&nbsp;&mdash; сделать так, чтобы ваши тексты читали, чтобы ваши презентации смотрели и&nbsp;слушали, чтобы на&nbsp;ваши соцсети подписывались
+		+e.item
+			.container
+				+e.block-wrap
+					.row
+						.col-6
+							+e.title Наша экспертиза
+							p &laquo;Тринити Медиа&raquo; объединяет профессионалов из&nbsp;области спортивного маркетинга и&nbsp;связей с&nbsp;общественностью. Наш опыт&nbsp;&mdash; это более пятнадцати лет работы в&nbsp;индустрии спорта и&nbsp;развлечений. С&nbsp;нами работают лучшие журналисты, лучшие дизайнеры, лучшие smm-щики, лучшие продюсеры и&nbsp;режиссеры. Мы&nbsp;занимали ведущие роли в&nbsp;создании бренда и&nbsp;продвижении Чемпионата мира по&nbsp;футболу 2018 года
+						.col
+							+e.block
+								+e.block-title Что такое хороший контент?
+								ul
+									li(v-for="hello in hellos1"  :key="hello.text")
+										img.swiper-lazy( :src="imgSRc+ '/servise-' + hello.img + '.png'", alt="")
+										span {{hello.text}}
+				+btn()(id="btn")
+		+e.item
+			.container
+				+e.block-wrap
+					.row
+						.col-6
+							+e.title Что мы делаем лучше всех
+							p Мы&nbsp;занимаемся созданием контента. Контент&nbsp;&mdash; это хорошо написанные тексты. Контент&nbsp;&mdash; это интересные презентации. Контент&nbsp;&mdash; это наполнение социальных сетей и&nbsp;сайтов. Контент&nbsp;&mdash; это оригинальные проекты, придуманные с&nbsp;нуля. Но&nbsp;контент будет неполным без графического оформления. Поэтому наш контент&nbsp;&mdash; это не&nbsp;только смыслы, но&nbsp;и&nbsp;графическое оформление. Мы&nbsp;делаем современный, привлекательный и&nbsp;продуманный дизайн для всех наших проектов
+						.col
+							+e.block
+								+e.block-title Что такое хороший дизайн?
+
+
+								ul
+									li(v-for="hello in hellos2"  :key="hello.text")
+										img.swiper-lazy( :src="imgSRc+ '/servise-' + hello.img + '.png'", alt="")
+										span {{hello.text}}
+	// end sHello

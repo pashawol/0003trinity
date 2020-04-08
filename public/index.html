@@ -37,15 +37,22 @@
 								</div>
 								<div class="menu-mobile__inner"> 
 									<ul>
+										<li><a href="#header-block" data-slide="0">Главное </a></li>
 										<li><a href="#visual" data-slide="1">Услуги</a></li>
-										<li><a href="#clients" data-slide="4">Клиенты</a></li>
-										<li><a href="#documents" data-slide="5">Документы</a></li>
-										<li><a href="#contacts" data-slide="6">Контакты</a></li>
+										<li><a href="#clients" data-slide="2">Портфолио</a></li>
+										<li><a href="#documents" data-slide="3">Документы</a></li>
+										<li><a href="#contacts" data-slide="4">Контакты</a></li>
 									</ul>
 									<div class="d-lg-none pl-3"><a class="menu-mobile__tel" href="#">+7 495 336 55 44</a><br/><a class="btn btn-outline-danger mt-4 link-modal" href="#modal-call">Стать клиетом</a>
 									</div>
 								</div>
 							</div>
+						</div>
+						<div class="header__col col-auto">
+							<ul class="ttu lang">
+								<li><a href="#">Ru</a></li>
+								<li><a class="text-danger" href="#">EN</a></li>
+							</ul>
 						</div>
 						<div class="header__col col-auto"><a class="header__tel" href="#">+7 495 336 55 44</a>
 						</div>
@@ -66,7 +73,7 @@
 						<div class="container">
 							<div class="header-block__inner">
 								<h1>Ваш <span>стиль</span> презентации</h1>
-								<p>Создадим и&nbsp;запустим ваш проект в&nbsp;красивой оболочке</p><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
+								<p>Управление проектами. <br> Визуализация. Контент. Продвижение.</p><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
 							</div>
 							<div class="header-block__wrap">
 								<div class="header-block__item animate-item-js" v-for="n in 5" :id="'target' + (6 - n)"><picture> 
@@ -81,6 +88,71 @@
 						</div>
 					</div>
 					<!-- end header-block-->
+					<!-- start sHello-->
+					<section class="sHello section swiper-slide" id="sHello" data-hash="sHello">
+						<div class="sHello__title-block" id="title-block">
+							<div class="container">
+								<h2>Здравствуйте</h2>
+								<div class="sHello__sub-title">Вы&nbsp;зашли на&nbsp;сайт агентства &laquo;Тринити Медиа&raquo;. Мы&nbsp;&mdash; это группа профессионалов по&nbsp;созданию контента и&nbsp;оформлению. Наша задача&nbsp;&mdash; сделать так, чтобы ваши тексты читали, чтобы ваши презентации смотрели и&nbsp;слушали, чтобы на&nbsp;ваши соцсети подписывались
+								</div>
+							</div>
+						</div>
+						<div class="sHello__item">
+							<div class="container">
+								<div class="sHello__block-wrap">
+									<div class="row">
+										<div class="col-6">
+											<div class="sHello__title">Наша экспертиза
+											</div>
+											<p>&laquo;Тринити Медиа&raquo; объединяет профессионалов из&nbsp;области спортивного маркетинга и&nbsp;связей с&nbsp;общественностью. Наш опыт&nbsp;&mdash; это более пятнадцати лет работы в&nbsp;индустрии спорта и&nbsp;развлечений. С&nbsp;нами работают лучшие журналисты, лучшие дизайнеры, лучшие smm-щики, лучшие продюсеры и&nbsp;режиссеры. Мы&nbsp;занимали ведущие роли в&nbsp;создании бренда и&nbsp;продвижении Чемпионата мира по&nbsp;футболу 2018 года</p>
+										</div>
+										<div class="col">
+											<div class="sHello__block">
+												<div class="sHello__block-title">Что такое хороший контент?
+												</div>
+												<ul>
+													<li v-for="hello in hellos1" :key="hello.text"><img class="swiper-lazy" :src="imgSRc+ '/servise-' + hello.img + '.png'" alt=""/><span>{{hello.text}}</span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div><a class="btn btn-danger btn--lg" :href="btnLink" id="btn">Отправить контакты</a>
+							</div>
+						</div>
+						<div class="sHello__item">
+							<div class="container">
+								<div class="sHello__block-wrap">
+									<div class="row">
+										<div class="col-6">
+											<div class="sHello__title">Что мы делаем лучше всех
+											</div>
+											<p>Мы&nbsp;занимаемся созданием контента. Контент&nbsp;&mdash; это хорошо написанные тексты. Контент&nbsp;&mdash; это интересные презентации. Контент&nbsp;&mdash; это наполнение социальных сетей и&nbsp;сайтов. Контент&nbsp;&mdash; это оригинальные проекты, придуманные с&nbsp;нуля. Но&nbsp;контент будет неполным без графического оформления. Поэтому наш контент&nbsp;&mdash; это не&nbsp;только смыслы, но&nbsp;и&nbsp;графическое оформление. Мы&nbsp;делаем современный, привлекательный и&nbsp;продуманный дизайн для всех наших проектов</p>
+										</div>
+										<div class="col">
+											<div class="sHello__block">
+												<div class="sHello__block-title">Что такое хороший дизайн?
+												</div>
+												<ul>
+													<li v-for="hello in hellos2" :key="hello.text"><img class="swiper-lazy" :src="imgSRc+ '/servise-' + hello.img + '.png'" alt=""/><span>{{hello.text}}</span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- end sHello-->
+					<!-- start sStrengths-->
+					<section class="sStrengths section swiper-slide" id="sStrengths" data-hash="sStrengths">
+						<div class="container">
+							<div class="section-title text-center">
+								<h2>sStrengths</h2>
+							</div>
+							<div class="row"></div>
+						</div>
+					</section>
+					<!-- end sStrengths-->
 					<!-- start s-servise-->
 					<section class="s-servise section swiper-slide s-servise s-servise--visual" id="visual" data-hash="visual">
 						<div class="container">
@@ -99,7 +171,7 @@
 <img    :src="'img/@2x/servise-lg-'+( n)+ '.png'" alt=""/>
 </picture> 
 								</div>
-							</div><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
+							</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end s-servise-->
@@ -121,7 +193,7 @@
 <img    :src="'img/@2x/servise-lg-'+( 3)+ '.png'" alt=""/>
 </picture> 
 								</div>
-							</div><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
+							</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end s-servise-->
@@ -143,25 +215,20 @@
 <img    :src="'img/@2x/servise-lg-'+( 4)+ '.png'" alt=""/>
 </picture> 
 								</div>
-							</div><a class="btn btn-danger btn--lg" :href="btnLink">Скачать презентацию</a>
+							</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end s-servise-->
-					<!-- start s-clients-->
-					<section class="s-clients section swiper-slide" id="clients" data-hash="clients">
+					<!-- start sCases-->
+					<section class="sCases section swiper-slide" id="sCases" data-hash="sCases">
 						<div class="container">
-							<h2>КЛИЕНТЫ</h2>
-							<div class="row row-cols-md-3 text-center justify-content-between">
-								<div class="s-clients__col col-sm-auto col-6" v-for="client in clients" :key="client.text">
-									<div class="s-clients__img-wrap"><img class="res-i" :src="'img/svg/' + client.img" alt=""/>
-									</div>
-									<div class="s-clients__title">{{client.text}}
-									</div>
-								</div>
+							<div class="section-title text-center">
+								<h2>sCases</h2>
 							</div>
+							<div class="row"></div>
 						</div>
 					</section>
-					<!-- end s-clients-->
+					<!-- end sCases-->
 					<!-- start s-documents-->
 					<section class="s-documents section swiper-slide" id="documents" data-hash="documents">
 						<div class="container">
@@ -259,6 +326,7 @@
 		<script src="libs/jquery/jquery.min.js"></script><script src="js/TweenMax.min.js"></script>
 <script src="libs/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 <script src="libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 		<!-- полифил для picture-->
 		<script src="libs/picturefill/picturefill.min.js"></script>
 		<!-- полифил для object-fit-->
