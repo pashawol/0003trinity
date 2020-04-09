@@ -43,12 +43,18 @@
 										<li><a href="#documents" data-slide="3">Документы</a></li>
 										<li><a href="#contacts" data-slide="4">Контакты</a></li>
 									</ul>
+									<div class="d-md-none">
+										<ul class="ttu lang">
+											<li><a href="#">Ru</a></li>
+											<li><a class="text-danger" href="#">EN</a></li>
+										</ul>
+									</div>
 									<div class="d-lg-none pl-3"><a class="menu-mobile__tel" href="#">+7 495 336 55 44</a><br/><a class="btn btn-outline-danger mt-4 link-modal" href="#modal-call">Стать клиетом</a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="header__col col-auto">
+						<div class="header__col col-auto d-none d-md-block">
 							<ul class="ttu lang">
 								<li><a href="#">Ru</a></li>
 								<li><a class="text-danger" href="#">EN</a></li>
@@ -66,6 +72,13 @@
 				</div>
 			</header>
 			<!-- end HEADER.header-->
+			<div class="title-block" id="title-block">
+				<div class="container">
+					<h2>Здравствуйте</h2>
+					<div class="title-block__sub-title">Вы&nbsp;зашли на&nbsp;сайт агентства &laquo;Тринити Медиа&raquo;. Мы&nbsp;&mdash; это группа профессионалов по&nbsp;созданию контента и&nbsp;оформлению. Наша задача&nbsp;&mdash; сделать так, чтобы ваши тексты читали, чтобы ваши презентации смотрели и&nbsp;слушали, чтобы на&nbsp;ваши соцсети подписывались
+					</div>
+				</div>
+			</div>
 			<div class="main-slider-js swiper-container" id="swiper-container">
 				<div class="swiper-wrapper" id="swiper-wrapper">
 					<!-- start header-block-->
@@ -90,18 +103,11 @@
 					<!-- end header-block-->
 					<!-- start sHello-->
 					<section class="sHello section swiper-slide" id="sHello" data-hash="sHello">
-						<div class="sHello__title-block" id="title-block">
-							<div class="container">
-								<h2>Здравствуйте</h2>
-								<div class="sHello__sub-title">Вы&nbsp;зашли на&nbsp;сайт агентства &laquo;Тринити Медиа&raquo;. Мы&nbsp;&mdash; это группа профессионалов по&nbsp;созданию контента и&nbsp;оформлению. Наша задача&nbsp;&mdash; сделать так, чтобы ваши тексты читали, чтобы ваши презентации смотрели и&nbsp;слушали, чтобы на&nbsp;ваши соцсети подписывались
-								</div>
-							</div>
-						</div>
 						<div class="sHello__item">
 							<div class="container">
 								<div class="sHello__block-wrap">
 									<div class="row">
-										<div class="col-6">
+										<div class="col-md-6">
 											<div class="sHello__title">Наша экспертиза
 											</div>
 											<p>&laquo;Тринити Медиа&raquo; объединяет профессионалов из&nbsp;области спортивного маркетинга и&nbsp;связей с&nbsp;общественностью. Наш опыт&nbsp;&mdash; это более пятнадцати лет работы в&nbsp;индустрии спорта и&nbsp;развлечений. С&nbsp;нами работают лучшие журналисты, лучшие дизайнеры, лучшие smm-щики, лучшие продюсеры и&nbsp;режиссеры. Мы&nbsp;занимали ведущие роли в&nbsp;создании бренда и&nbsp;продвижении Чемпионата мира по&nbsp;футболу 2018 года</p>
@@ -116,19 +122,19 @@
 											</div>
 										</div>
 									</div>
-								</div><a class="btn btn-danger btn--lg" :href="btnLink" id="btn">Отправить контакты</a>
+								</div>
 							</div>
 						</div>
 						<div class="sHello__item">
 							<div class="container">
 								<div class="sHello__block-wrap">
 									<div class="row">
-										<div class="col-6">
+										<div class="col-md-6">
 											<div class="sHello__title">Что мы делаем лучше всех
 											</div>
 											<p>Мы&nbsp;занимаемся созданием контента. Контент&nbsp;&mdash; это хорошо написанные тексты. Контент&nbsp;&mdash; это интересные презентации. Контент&nbsp;&mdash; это наполнение социальных сетей и&nbsp;сайтов. Контент&nbsp;&mdash; это оригинальные проекты, придуманные с&nbsp;нуля. Но&nbsp;контент будет неполным без графического оформления. Поэтому наш контент&nbsp;&mdash; это не&nbsp;только смыслы, но&nbsp;и&nbsp;графическое оформление. Мы&nbsp;делаем современный, привлекательный и&nbsp;продуманный дизайн для всех наших проектов</p>
 										</div>
-										<div class="col">
+										<div class="col-6">
 											<div class="sHello__block">
 												<div class="sHello__block-title">Что такое хороший дизайн?
 												</div>
@@ -138,7 +144,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div><a class="btn btn-danger btn--lg" :href="btnLink" id="btn">Отправить контакты</a>
 							</div>
 						</div>
 					</section>

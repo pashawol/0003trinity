@@ -130,7 +130,7 @@ function eventHandler() {
 				slidesPerView: "auto",
 				freeMode: true,
 				keyboard: true,
-				// speed: 600,
+				speed: 1600,
 				//...
 				lazy: {
 					loadPrevNext: true,
@@ -141,8 +141,8 @@ function eventHandler() {
 					replaceState: true
 				},
 				mousewheel: {
-					// sensitivity: 2.5,
-					releaseOnEdges: true // forceToAxis: true,
+					sensitivity: 4.5 // releaseOnEdges: true,
+					// forceToAxis: true,
 
 				}
 			});
@@ -336,26 +336,42 @@ function eventHandler() {
 		}).setTween(tweensServises3[i]) // .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
 	} // /servises2 animate
+	// let tweensHello = [
+	// 	TweenMax.to("#title-block", 11, {
+	// 		x: "100vw",
+	// 		// ease: "elastic",
+	// 	}
+	// 	),
+	// 	TweenMax.from("#btn", 1, {
+	// 		x: "-100vw",
+	// 		// ease: "elastic",
+	// 	}
+	// 	),
+	// ]
+	// var controller = new ScrollMagic.Controller({ globalSceneOptions: { duration: 100 } });
 
 
-	var tweensHello = [TweenMax.to("#title-block", 11, {
-		x: "100vw" // ease: "elastic",
-
-	}), TweenMax.to("#btn", 1, {
-		x: "100vw" // ease: "elastic",
-
-	})]; // build scene 
-
-	for (var i = 0, l = tweensHello.length; i < l; i++) {
-		var duration = $("#sHello").width();
-		var scene = new ScrollMagic.Scene({
-			triggerElement: "#sHello",
-			duration: duration * .5,
-			offset: duration / 4
-		}).setTween(tweensHello[i]).addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
-	} // /servises2 animate
-
+	new ScrollMagic.Scene({
+		triggerElement: "#sHello",
+		triggerHook: "onLeave",
+		duration: "150%",
+		offset: "-200%"
+	}).setClassToggle("#title-block", "fixed") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller); // build scene
+	// var scene = new ScrollMagic.Scene({ triggerElement: "#sHello", duration: 300 })
+	// 	.setPin("#title-block")
+	// 	.addIndicators({ name: "1 (duration: 300)" }) // add indicators (requires plugin)
+	// 	.addTo(controller);
+	// // build scene 
+	// for (var i = 0, l = tweensHello.length; i < l; i++) {
+	// 	var duration = $("#sHello").width();
+	// 	var scene = new ScrollMagic.Scene({ triggerElement: "#sHello", duration: duration * .4, offset: (duration / 4) })
+	// 		.setTween(tweensHello[i])
+	// 		.addIndicators() // add indicators (requires plugin)
+	// 		.addTo(controller);
+	// }
+	// // /servises2 animate
 
 	var gets = function () {
 		var a = window.location.search;
