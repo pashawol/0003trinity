@@ -404,7 +404,7 @@ function eventHandler() {
 	new ScrollMagic.Scene({
 		triggerElement: "#sHello",
 		triggerHook: "onLeave",
-		duration: "150%",
+		duration: "120%",
 		offset: "-200%"
 	})
 		.setClassToggle("#title-block", "fixed") // add class toggle
