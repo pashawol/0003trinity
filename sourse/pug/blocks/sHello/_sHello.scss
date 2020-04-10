@@ -29,6 +29,10 @@
 		}
 	}
 
+	&:not(.fixed) {
+		pointer-events: none;
+	}
+
 	&.fixed {
 
 		opacity: 1;
@@ -49,6 +53,12 @@
 
 // start .sHello
 .sHello {
+
+
+	.container {
+		position: relative;
+		z-index: 200;
+	}
 
 	@include media-breakpoint-up(lg) {
 
@@ -111,14 +121,12 @@
 		width: 115%;
 	}
 
-	position: relative;
-	z-index: 2;
 
 	&::before {
 		content: '';
 		position: absolute;
 		height: 100%;
-		z-index: -1;
+		// z-index: -1;
 		top: 0;
 		right: 0%;
 		display: block;

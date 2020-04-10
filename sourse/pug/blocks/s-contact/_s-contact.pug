@@ -4,15 +4,34 @@ mixin s-contact()
 		.container
 			h2 Контакты
 			+e.center
-				.row
-
-					+e.col.col-sm-6(v-for="contact in contactsOffice"  :key="contact.title")
-						.h5.mb-4.strong {{contact.title}}
-						p.fw-400  {{contact.text}}
-				+e.line(v-for="contactline in contactsLine"  :key="contactline.title")
-					+e.line-title {{contactline.title}}
-					+e.line-content(v-html="contactline.text")
- 
+				+e.group
+					+e.icon-wrap
+						+icon('tel')
+					+e.content
+						+e.title Контактный телефон
+						+e.lg(href="href:tel:+7(495)9672787") +7 (495) 967 2787
+				
+				+e.group
+					+e.icon-wrap
+						+icon('clock')
+					+e.content
+						+e.title Часы работы:
+						+e.lg Пн – Пт , 9:00 – 19:00
+				
+				+e.group
+					+e.icon-wrap
+						+icon('mark')
+					+e.content
+						+e.title Наш адрес:
+						+e.lg 119270, г. Москва, Бизнес-парк &laquo;Союз&raquo;, Лужнецкая набережная дом 2/4, строение&nbsp;6, офис 109
+						p: strong Нужна парковка?
+						p.small Если Вы&nbsp;едете к&nbsp;нам на&nbsp;автомобиле, Вы&nbsp;сможете воспользоваться гостевым паркингом Бизнес-парка &laquo;Союз&raquo;. Въезд под шлагбаум с&nbsp;Лужнецкой набережной между домом 2/4 строение 72&nbsp;и&nbsp;домом 2/4 строение&nbsp;59.
+				+e.group
+					+e.icon-wrap
+						+icon('mail')
+					+e.content
+						+e.title Электронная почта
+						+e.lg(href="mailto:info@trinity-media.net") info@trinity-media.net
 			+e.wrap
 				+e.item.animate-item-js(v-for="n in 5" :id="'target-contact' + (6 - n)")
 					<picture> 

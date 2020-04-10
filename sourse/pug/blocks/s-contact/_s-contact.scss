@@ -25,7 +25,7 @@
 		margin-bottom: rem(20);
 
 		p {
-			max-width: rem(270);
+			max-width: rem(824);
 		}
 	}
 
@@ -57,6 +57,52 @@
 
 	a {
 		text-decoration: none !important;
+	}
+
+	&__group {
+		&:not(:last-child) {
+
+			margin-bottom: calc(.5vh + #{rem(5)});
+		}
+
+		display: flex;
+
+		a {
+			@extend .text-danger;
+			text-decoration: none !important;
+		}
+
+		.icon {
+			font-size: rem(26);
+		}
+	}
+
+	&__icon-wrap {
+		width: rem(30);
+		text-align: center;
+		margin-right: rem(40);
+		flex-shrink: 0;
+	}
+
+	&__title {
+		margin-bottom: rem(10);
+	}
+
+	&__lg {
+		@include rfs(20);
+		font-weight: bold;
+
+		@include media-breakpoint-up(xxl) {
+
+			max-width: rem(600);
+		}
+
+		max-width: rem(880);
+		margin-bottom: rem(20);
+	}
+
+	p.small {
+		font-size: rem(14);
 	}
 
 	//

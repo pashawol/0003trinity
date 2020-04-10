@@ -279,16 +279,54 @@
 						<div class="container">
 							<h2>Контакты</h2>
 							<div class="s-contact__center">
-								<div class="row">
-									<div class="s-contact__col col-sm-6" v-for="contact in contactsOffice" :key="contact.title">
-										<div class="h5 mb-4 strong">{{contact.title}}</div>
-										<p class="fw-400"> {{contact.text}}</p>
+								<div class="s-contact__group">
+									<div class="s-contact__icon-wrap">
+										<svg class="icon icon-tel ">
+											<use xlink:href="img/svg/sprite.svg#tel"></use>
+										</svg>
+									</div>
+									<div class="s-contact__content">
+										<div class="s-contact__title">Контактный телефон
+										</div><a class="s-contact__lg" href="href:tel:+7(495)9672787">+7 (495) 967 2787</a>
 									</div>
 								</div>
-								<div class="s-contact__line" v-for="contactline in contactsLine" :key="contactline.title">
-									<div class="s-contact__line-title">{{contactline.title}}
+								<div class="s-contact__group">
+									<div class="s-contact__icon-wrap">
+										<svg class="icon icon-clock ">
+											<use xlink:href="img/svg/sprite.svg#clock"></use>
+										</svg>
 									</div>
-									<div class="s-contact__line-content" v-html="contactline.text">
+									<div class="s-contact__content">
+										<div class="s-contact__title">Часы работы:
+										</div>
+										<div class="s-contact__lg">Пн – Пт , 9:00 – 19:00
+										</div>
+									</div>
+								</div>
+								<div class="s-contact__group">
+									<div class="s-contact__icon-wrap">
+										<svg class="icon icon-mark ">
+											<use xlink:href="img/svg/sprite.svg#mark"></use>
+										</svg>
+									</div>
+									<div class="s-contact__content">
+										<div class="s-contact__title">Наш адрес:
+										</div>
+										<div class="s-contact__lg">119270, г. Москва, Бизнес-парк &laquo;Союз&raquo;, Лужнецкая набережная дом 2/4, строение&nbsp;6, офис 109
+										</div>
+										<p><strong>Нужна парковка?</strong></p>
+										<p class="small">Если Вы&nbsp;едете к&nbsp;нам на&nbsp;автомобиле, Вы&nbsp;сможете воспользоваться гостевым паркингом Бизнес-парка &laquo;Союз&raquo;. Въезд под шлагбаум с&nbsp;Лужнецкой набережной между домом 2/4 строение 72&nbsp;и&nbsp;домом 2/4 строение&nbsp;59.</p>
+									</div>
+								</div>
+								<div class="s-contact__group">
+									<div class="s-contact__icon-wrap">
+										<svg class="icon icon-mail ">
+											<use xlink:href="img/svg/sprite.svg#mail"></use>
+										</svg>
+									</div>
+									<div class="s-contact__content">
+										<div class="s-contact__title">Электронная почта
+										</div><a class="s-contact__lg" href="mailto:info@trinity-media.net">info@trinity-media.net</a>
 									</div>
 								</div>
 							</div>
