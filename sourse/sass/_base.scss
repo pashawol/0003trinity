@@ -438,6 +438,11 @@ input::-webkit-inner-spin-button {
 }
 
 .swiper-button-hand {
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
+
+	display: none;
 	width: rem(66);
 	height: rem(45);
 	@include bgs;

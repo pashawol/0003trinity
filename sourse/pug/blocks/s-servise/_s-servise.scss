@@ -12,7 +12,11 @@
 		display: block;
 		overflow: hidden;
 		width: 100%;
-		transform: skewX(20deg);
+
+		@include media-breakpoint-up(lg) {
+
+			transform: skewX(20deg);
+		}
 
 	}
 
