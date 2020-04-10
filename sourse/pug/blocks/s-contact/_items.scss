@@ -2,6 +2,7 @@
 
 	&__item {
 		position: absolute;
+		@include mt;
 
 		@include media-breakpoint-up(lg) {
 			position: fixed;

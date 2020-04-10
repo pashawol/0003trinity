@@ -2,8 +2,12 @@ mixin sStrengths()
 	// start sStrengths
 	+b.SECTION.sStrengths.section.swiper-slide#sStrengths&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sStrengths
+			h2 Наши сильные стороны
 				
-			.row
+			.row 
+				+e.col.col-lg-4.col-md-6(v-for="item in sStrengths"  :key="item.title")
+					+e.item
+						+e.title {{item.title}}
+						+e.text(v-html="item.text")
+			+btn
 	// end sStrengths

@@ -12,7 +12,7 @@
 		display: block;
 		overflow: hidden;
 		width: 100%;
-		transform: skewX(10deg);
+		transform: skewX(20deg);
 
 	}
 
@@ -50,6 +50,7 @@
 	&__item {
 		top: 55vh;
 		position: absolute;
+		z-index: -1;
 
 		@include media-breakpoint-up(lg) {
 			position: fixed;
@@ -99,6 +100,8 @@
 				width: rem(1317px);
 				height: rem(1348px);
 				margin-left: rem(240);
+
+				// #D3ECD1
 			}
 
 			top: 26vh;
@@ -228,7 +231,8 @@
 
 	&::before {
 		// width: 120%;
-		background-color: rgba(160, 203, 225, 0.5);
+		// background-color: #D3ECD1;
+		background-color: rgba(211, 236, 209, 0.685);
 	}
 
 	&.swiper-slide-active {

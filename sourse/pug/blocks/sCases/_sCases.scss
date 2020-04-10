@@ -1,29 +1,63 @@
+// start .sCases
+.sCases {
 
-	// start .sCases
-	.sCases {
-		 
+	position: relative;
+	z-index: 40;
+
+	&__sub-title {
+		max-width: rem(620);
+		@include rfs(20);
+		line-height: 130%;
+		margin-bottom: rem(80);
+		font-weight: 500;
+	}
+
+	p {
+		max-width: rem(435);
+		line-height: 130%;
+		margin-bottom: calc(#{rem(50)} + 10vh);
+	}
+
+	// .container{
+
+	// }
+
 	@include media-breakpoint-up(xl) {}
+
 	@include media-breakpoint-up(lg) {}
+
 	@include media-breakpoint-up(md) {}
+
 	@include media-breakpoint-up(sm) {}
+
 	@include media-breakpoint-up(xs) {}
-	
+
 	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
+	@include media-breakpoint-between(md, xl) {}
+
+
 	//
 	@include media-breakpoint-only(xs) {}
+
 	@include media-breakpoint-only(sm) {}
+
 	@include media-breakpoint-only(md) {}
+
 	@include media-breakpoint-only(lg) {}
+
 	@include media-breakpoint-only(xl) {}
-	
+
 	//
 	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
 
-} // end.sCases
+	@include media-breakpoint-down(lg) {}
+
+	@include media-breakpoint-down(md) {}
+
+	@include media-breakpoint-down(sm) {}
+
+	@include media-breakpoint-down(xs) {}
+
+}
+
+// end.sCases

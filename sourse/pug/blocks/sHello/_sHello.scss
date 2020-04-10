@@ -124,7 +124,11 @@
 		overflow: hidden;
 		width: 100%;
 		width: 120%;
-		transform: skewX(10deg);
+
+		@include media-breakpoint-up(lg) {
+			transform: skewX(20deg);
+		}
+
 		background-color: rgba(160, 203, 225, .5);
 		@include mt;
 
@@ -142,7 +146,7 @@
 	p {
 		line-height: 130%;
 		max-width: rem(500);
-		margin-bottom: rem(50);
+
 
 	}
 
@@ -161,7 +165,13 @@
 	&__block {
 		position: relative;
 		z-index: 2;
-		padding: rem(34) rem(60);
+
+		@include media-breakpoint-up(sm) {
+
+			padding: rem(34) rem(60);
+		}
+
+		padding: rem(34) rem(30);
 		max-width: rem(611);
 
 		li {
@@ -190,10 +200,19 @@
 			height: 100%;
 			background-color: #ffffff;
 			z-index: -1;
-			transform: skewX(20deg);
+
+			@include media-breakpoint-up(sm) {
+
+				transform: skewX(20deg);
+			}
+
+			transform: skewX(10deg);
 		}
 	}
 
+	.btn {
+		margin-top: rem(40);
+	}
 
 	@include media-breakpoint-up(xl) {}
 

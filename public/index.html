@@ -72,7 +72,7 @@
 				</div>
 			</header>
 			<!-- end HEADER.header-->
-			<div class="title-block" id="title-block">
+			<div class="title-block d-none d-lg-block" id="title-block">
 				<div class="container">
 					<h2>Здравствуйте</h2>
 					<div class="title-block__sub-title">Вы&nbsp;зашли на&nbsp;сайт агентства &laquo;Тринити Медиа&raquo;. Мы&nbsp;&mdash; это группа профессионалов по&nbsp;созданию контента и&nbsp;оформлению. Наша задача&nbsp;&mdash; сделать так, чтобы ваши тексты читали, чтобы ваши презентации смотрели и&nbsp;слушали, чтобы на&nbsp;ваши соцсети подписывались
@@ -103,6 +103,13 @@
 					<!-- end header-block-->
 					<!-- start sHello-->
 					<section class="sHello section swiper-slide" id="sHello" data-hash="sHello">
+						<div class="title-block d-lg-none" id="title-block">
+							<div class="container pb-5">
+								<h2>Здравствуйте</h2>
+								<div class="title-block__sub-title">Вы&nbsp;зашли на&nbsp;сайт агентства &laquo;Тринити Медиа&raquo;. Мы&nbsp;&mdash; это группа профессионалов по&nbsp;созданию контента и&nbsp;оформлению. Наша задача&nbsp;&mdash; сделать так, чтобы ваши тексты читали, чтобы ваши презентации смотрели и&nbsp;слушали, чтобы на&nbsp;ваши соцсети подписывались
+								</div>
+							</div>
+						</div>
 						<div class="sHello__item">
 							<div class="container">
 								<div class="sHello__block-wrap">
@@ -112,7 +119,7 @@
 											</div>
 											<p>&laquo;Тринити Медиа&raquo; объединяет профессионалов из&nbsp;области спортивного маркетинга и&nbsp;связей с&nbsp;общественностью. Наш опыт&nbsp;&mdash; это более пятнадцати лет работы в&nbsp;индустрии спорта и&nbsp;развлечений. С&nbsp;нами работают лучшие журналисты, лучшие дизайнеры, лучшие smm-щики, лучшие продюсеры и&nbsp;режиссеры. Мы&nbsp;занимали ведущие роли в&nbsp;создании бренда и&nbsp;продвижении Чемпионата мира по&nbsp;футболу 2018 года</p>
 										</div>
-										<div class="col">
+										<div class="col-md-6">
 											<div class="sHello__block">
 												<div class="sHello__block-title">Что такое хороший контент?
 												</div>
@@ -121,6 +128,8 @@
 												</ul>
 											</div>
 										</div>
+									</div>
+									<div class="d-none d-lg-block"><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
 									</div>
 								</div>
 							</div>
@@ -134,7 +143,7 @@
 											</div>
 											<p>Мы&nbsp;занимаемся созданием контента. Контент&nbsp;&mdash; это хорошо написанные тексты. Контент&nbsp;&mdash; это интересные презентации. Контент&nbsp;&mdash; это наполнение социальных сетей и&nbsp;сайтов. Контент&nbsp;&mdash; это оригинальные проекты, придуманные с&nbsp;нуля. Но&nbsp;контент будет неполным без графического оформления. Поэтому наш контент&nbsp;&mdash; это не&nbsp;только смыслы, но&nbsp;и&nbsp;графическое оформление. Мы&nbsp;делаем современный, привлекательный и&nbsp;продуманный дизайн для всех наших проектов</p>
 										</div>
-										<div class="col-6">
+										<div class="col-md-6">
 											<div class="sHello__block">
 												<div class="sHello__block-title">Что такое хороший дизайн?
 												</div>
@@ -143,8 +152,8 @@
 												</ul>
 											</div>
 										</div>
-									</div>
-								</div><a class="btn btn-danger btn--lg" :href="btnLink" id="btn">Отправить контакты</a>
+									</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+								</div>
 							</div>
 						</div>
 					</section>
@@ -152,10 +161,17 @@
 					<!-- start sStrengths-->
 					<section class="sStrengths section swiper-slide" id="sStrengths" data-hash="sStrengths">
 						<div class="container">
-							<div class="section-title text-center">
-								<h2>sStrengths</h2>
-							</div>
-							<div class="row"></div>
+							<h2>Наши сильные стороны</h2>
+							<div class="row"> 
+								<div class="sStrengths__col col-lg-4 col-md-6" v-for="item in sStrengths" :key="item.title">
+									<div class="sStrengths__item">
+										<div class="sStrengths__title">{{item.title}}
+										</div>
+										<div class="sStrengths__text" v-html="item.text">
+										</div>
+									</div>
+								</div>
+							</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end sStrengths-->
@@ -228,10 +244,10 @@
 					<!-- start sCases-->
 					<section class="sCases section swiper-slide" id="sCases" data-hash="sCases">
 						<div class="container">
-							<div class="section-title text-center">
-								<h2>sCases</h2>
+							<h2>Портфолио</h2>
+							<div class="sCases__sub-title">Все созданные нами работы принадлежат нашим клиентам. Мы&nbsp;не&nbsp;рекламируем свои услуги. Если вы&nbsp;зашли на&nbsp;наш сайт, значит кто-то рассказал вам о&nbsp;нас
 							</div>
-							<div class="row"></div>
+							<p>Мы&nbsp;будем рады поделиться примерами наших работ при личной встрече</p><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end sCases-->

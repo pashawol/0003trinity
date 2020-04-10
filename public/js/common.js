@@ -228,77 +228,208 @@ function eventHandler() {
 	// contact animate
 
 
-	var tweensContact = [TweenMax.from("#target-contact1", 100, {
-		x: "100%",
-		y: "-700%",
-		opacity: 0,
-		scale: 0.5,
-		ease: "elastic",
-		rotation: 60
-	}), TweenMax.from("#target-contact2", 100, {
-		y: "-150%",
-		x: "-800%",
-		scale: 0.6,
-		ease: "elastic",
-		rotation: 90
-	}), TweenMax.from("#target-contact3", 100, {
-		y: "5%",
-		x: "-300%",
-		rotation: 240,
+	var contact = {
+		x1: 1000,
+		y1: 700,
+		x2: 800,
+		y2: 150
+	};
+	var tweensContact = [new TimelineMax().add(TweenMax.fromTo("#target-contact1", 50, {
+		xPercent: -contact.x1 - 1200 - 800
+	}, {
+		rotation: 260,
 		scale: 0.8,
-		ease: "elastic" // rotation: 260,
-
-	}), TweenMax.from("#target-contact4", 100, {
+		xPercent: -contact.x1 - 1200,
+		yPercent: -contact.y1 + 400
+	})).add(TweenMax.fromTo("#target-contact1", 50, {
+		scale: 1,
+		rotation: 0
+	}, {
+		scale: 0.8,
+		rotation: 260,
+		xPercent: -contact.x1,
+		yPercent: -contact.y1
+	})).add(TweenMax.fromTo("#target-contact1", 50, {
+		rotation: 60
+	}, {
+		scale: 1,
+		rotation: 260,
+		xPercent: 0,
+		yPercent: 0
+	})), new TimelineMax().add(TweenMax.fromTo("#target-contact2", 50, {
+		xPercent: -contact.x2 - 1000,
+		yPercent: -contact.y2 - 300,
+		rotation: 260,
+		scale: 1
+	}, {
+		scale: 0.5,
+		rotation: 10,
+		xPercent: -contact.x2,
+		yPercent: -contact.y2
+	})).add(TweenMax.fromTo("#target-contact2", 50, _defineProperty({
+		rotation: 60
+	}, "rotation", -260), {
+		scale: 1,
+		rotation: 0,
+		xPercent: 0,
+		yPercent: 0
+	})), new TimelineMax().add(TweenMax.fromTo("#target-contact3", 50, {
+		xPercent: -300 - 150,
+		yPercent: -215,
+		rotation: 360
+	}, {
+		// xPercent: -300 - 150,
+		yPercent: -15,
+		rotation: 720
+	})).add(TweenMax.fromTo("#target-contact3", 50, {
+		rotation: 640
+	}, {
+		scale: 0.8,
+		xPercent: -300,
+		yPercent: -5,
+		rotation: 1000
+	})).add(TweenMax.fromTo("#target-contact3", 50, {
+		rotation: 240,
+		scale: 0.8
+	}, {
+		rotation: 0,
+		xPercent: 0,
+		yPercent: 0
+	})), new TimelineMax().add(TweenMax.fromTo("#target-contact4", 50, {
 		// yPercent: 10,
-		y: "10%",
-		x: "-550%",
+		xPercent: -1050,
+		yPercent: -450,
+		rotation: 420
+	}, {
+		xPercent: -550,
+		yPercent: 50,
+		rotation: 220
+	})).add(TweenMax.fromTo("#target-contact4", 50, {
+		rotation: 160,
+		scale: 0.5
+	}, {
+		rotation: 0,
+		xPercent: 0,
+		yPercent: 0,
+		scale: 1
+	})), new TimelineMax().add(TweenMax.fromTo("#target-contact5", 50, {
+		xPercent: -700,
+		yPercent: 350,
+		rotation: 220,
+		scale: 1
+	}, {
+		xPercent: -700,
 		yPercent: 50,
 		rotation: 120,
 		scale: 0.5
-	}), TweenMax.from("#target-contact5", 100, {
-		x: "-700%",
-		yPercent: 50,
-		rotation: 120,
-		scale: 0.5,
-		ease: "elastic"
-	})]; // build scene 
+	})).add(TweenMax.fromTo("#target-contact5", 50, {}, {
+		xPercent: 0,
+		yPercent: 0,
+		rotation: 20,
+		scale: 1
+	}))]; // build scene 
+	// var scene1_0 = new ScrollMagic.Scene({ triggerElement: "#documents", duration: durationEl * 2, offset: - durationEl * .8 })
+	// 	.setPin("#target-contact1")
+	// 	.setTween(tweensContact[0])
+	// 	.addIndicators() // add indicators (requires plugin)
+	// 	.addTo(controller);
 
-	for (var i = 0, l = tweensContact.length; i < l; i++) {
-		var scene = new ScrollMagic.Scene({
-			triggerElement: "#contact",
-			duration: durationEl * 1.4,
-			offset: -offsetEl / 1
-		}).setTween(tweensContact[i]) // .addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
-	}
-
-	var tweensServises = [TweenMax.to("#target-servise1", 11, {
-		x: "-100%",
-		y: "100%",
-		ease: "elastic",
+	var scene0 = new ScrollMagic.Scene({
+		triggerElement: "#contact",
+		duration: durationEl * 5,
+		offset: -durationEl * 4
+	}).setTween(tweensContact[0]) // .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	var scene1 = new ScrollMagic.Scene({
+		triggerElement: "#contact",
+		duration: durationEl * 3,
+		offset: -durationEl * 2
+	}).setTween(tweensContact[1]) // .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	var scene2 = new ScrollMagic.Scene({
+		triggerElement: "#contact",
+		duration: durationEl * 4,
+		offset: -durationEl * 3
+	}).setTween(tweensContact[2]) // .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	var scene3 = new ScrollMagic.Scene({
+		triggerElement: "#contact",
+		duration: durationEl * 3,
+		offset: -durationEl * 2
+	}).setTween(tweensContact[3]) // .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	var scene4 = new ScrollMagic.Scene({
+		triggerElement: "#contact",
+		duration: durationEl * 3,
+		offset: -durationEl * 2
+	}).setTween(tweensContact[4]) // .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	var tweensServises = [new TimelineMax().add(TweenMax.fromTo("#target-servise1", 50, {
+		xPercent: -420,
+		yPercent: 5,
+		rotation: 360 * 2
+	}, {
+		xPercent: -300,
+		yPercent: 15,
+		rotation: 360
+	})).add(TweenMax.fromTo("#target-servise1", 50, {
+		rotation: 360 * 2
+	}, {
+		xPercent: -150,
+		yPercent: 15,
+		rotation: 360
+	})).add(TweenMax.fromTo("#target-servise1", 50, {
+		rotation: 360
+	}, {
+		xPercent: 0,
+		yPercent: 0,
+		rotation: 0
+	})).add(TweenMax.to("#target-servise1", 50, {
+		xPercent: 100,
+		yPercent: 100,
 		rotation: 160
-	}), TweenMax.to("#target-servise2", 11, {
-		x: "200%",
-		y: "-500%",
-		ease: "elastic",
+	})), new TimelineMax().add(TweenMax.fromTo("#target-servise2", 50, {
+		xPercent: -1200 - 300,
+		yPercent: 10 - 10,
+		rotation: 360 * 2
+	}, {
+		xPercent: -700,
+		yPercent: 10,
+		rotation: 360
+	})).add(TweenMax.fromTo("#target-servise2", 50, {
+		rotation: 500
+	}, {
+		xPercent: -500,
+		yPercent: 10,
+		rotation: 360
+	})).add(TweenMax.fromTo("#target-servise2", 50, {
+		rotation: 360
+	}, {
+		xPercent: 0,
+		yPercent: 0,
+		rotation: 0
+	})).add(TweenMax.to("#target-servise2", 50, {
+		xPercent: 200,
+		yPercent: -500,
 		// opacity: 0.5,
 		scale: 0.5,
 		rotation: 130
-	})]; // contact animate
-	// build scene 
-
-	for (var i = 0, l = tweensServises.length; i < l; i++) {
-		var scene = new ScrollMagic.Scene({
-			triggerElement: "#visual",
-			duration: durationEl,
-			offset: offsetEl
-		}).setTween(tweensServises[i]) // .addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
-	} // / servises1 animate
+	}))];
+	var scene = new ScrollMagic.Scene({
+		triggerElement: "#visual",
+		duration: durationEl * 6,
+		offset: -durationEl * 3.5
+	}).setTween(tweensServises[0]) // .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	var scene = new ScrollMagic.Scene({
+		triggerElement: "#visual",
+		duration: durationEl * 6,
+		offset: -durationEl * 3.5
+	}).setTween(tweensServises[1]) // .addIndicators() // add indicators (requires plugin)
+	.addTo(controller); // / servises1 animate
 	// servises2 animate
 
-
-	var tweensServises2 = [TweenMax.to("#target-servise21", 11, {
+	var tweensServises2 = [TweenMax.to("#target-servise21", 50, {
 		// x: 1000,
 		x: "-100%",
 		y: "-200%",
@@ -319,11 +450,10 @@ function eventHandler() {
 	// servises2 animate
 
 
-	var tweensServises3 = [TweenMax.to("#target-servise31", 11, {
+	var tweensServises3 = [TweenMax.to("#target-servise31", 50, {
 		x: "100%",
 		y: "-200%",
 		ease: "elastic",
-		// opacity: 0.5,
 		scale: 0.5,
 		rotation: 130
 	})]; // build scene 
@@ -335,21 +465,7 @@ function eventHandler() {
 			offset: offsetEl
 		}).setTween(tweensServises3[i]) // .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
-	} // /servises2 animate
-	// let tweensHello = [
-	// 	TweenMax.to("#title-block", 11, {
-	// 		x: "100vw",
-	// 		// ease: "elastic",
-	// 	}
-	// 	),
-	// 	TweenMax.from("#btn", 1, {
-	// 		x: "-100vw",
-	// 		// ease: "elastic",
-	// 	}
-	// 	),
-	// ]
-	// var controller = new ScrollMagic.Controller({ globalSceneOptions: { duration: 100 } });
-
+	}
 
 	new ScrollMagic.Scene({
 		triggerElement: "#sHello",
@@ -357,21 +473,8 @@ function eventHandler() {
 		duration: "120%",
 		offset: "-200%"
 	}).setClassToggle("#title-block", "fixed") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
-	.addTo(controller); // build scene
-	// var scene = new ScrollMagic.Scene({ triggerElement: "#sHello", duration: 300 })
-	// 	.setPin("#title-block")
-	// 	.addIndicators({ name: "1 (duration: 300)" }) // add indicators (requires plugin)
-	// 	.addTo(controller);
-	// // build scene 
-	// for (var i = 0, l = tweensHello.length; i < l; i++) {
-	// 	var duration = $("#sHello").width();
-	// 	var scene = new ScrollMagic.Scene({ triggerElement: "#sHello", duration: duration * .4, offset: (duration / 4) })
-	// 		.setTween(tweensHello[i])
-	// 		.addIndicators() // add indicators (requires plugin)
-	// 		.addTo(controller);
-	// }
-	// // /servises2 animate
+	// .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
 
 	var gets = function () {
 		var a = window.location.search;
