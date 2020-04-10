@@ -34,15 +34,29 @@ mixin modal()
 	.d-none
 		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
 			.text-center
-				+e.title.h3.ttu Обратный звонок
+				+e.title.h3.ttu Стать клиетом
 				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя",'name')(required) 
+			+input("Ваше Имя",'name')
 			+input("Ваш телефон","tel")(required)
 			//- +input("email","Ваше email")(required)
 			//- +text( "Комментарий")
 			+e.INPUT.btn(type="submit" value="Отправить") 
 			+polite()
 		// #modal-call
+		
+		+form-wrap()(id="modal-contact" class="  modal-win modal-form" )
+			.text-center
+				+e.title.h3.ttu Отправить контакты
+				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
+			+input("Ваше Имя",'name')
+			+input("Компания",'company')
+			+input("Ваш телефон","tel")(required)
+			+input("Ваш email","email")
+			//- +input("email","Ваше email")(required)
+			//- +text( "Комментарий")
+			+e.INPUT.btn(type="submit" value="Отправить") 
+			+polite()
+		// #modal-contact
 		
 		div(id="modal-thanks" class="  modal-win modal-form" )
 			.text-center

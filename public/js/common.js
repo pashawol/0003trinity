@@ -130,7 +130,11 @@ function eventHandler() {
 				slidesPerView: "auto",
 				freeMode: true,
 				keyboard: true,
-				speed: 1600,
+				speed: 1200,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev'
+				},
 				//...
 				lazy: {
 					loadPrevNext: true,
@@ -211,9 +215,8 @@ function eventHandler() {
 		scale: 0.9,
 		ease: "elastic"
 	}), TweenMax.to("#target5", 100, {
-		x: "-10%",
-		y: "-400%",
-		ease: "elastic",
+		x: "120%",
+		y: "350%",
 		rotation: 140
 	})]; // build scene 
 

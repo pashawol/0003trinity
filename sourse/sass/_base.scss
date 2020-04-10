@@ -438,8 +438,8 @@ input::-webkit-inner-spin-button {
 }
 
 .swiper-button-hand {
-	width: 45px;
-	height: 16px;
+	width: rem(66);
+	height: rem(45);
 	@include bgs;
 	z-index: 300;
 	outline: none !important;
@@ -448,17 +448,43 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 	@include a-cent(y);
 
+	&::after {
+		display: none;
+	}
+
+	&::before {
+		content: '';
+		background-image: url(../img/svg/arrow-right.svg);
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
 	&-next {
-		// background-image: url(../img/arr-right.png);
-		right: 0;
+		right: 1vw;
 	}
 
 	&-prev {
-		left: 0;
-		// background-image: url(../img/arr-left.png);
+		left: 1vw;
+
+		&::before {
+			transform: rotateY(-180deg);
+		}
+
 
 	}
 
+}
+
+swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+	opacity: .0;
+	pointer-events: painted;
 }
 
 .swiper-pagination {

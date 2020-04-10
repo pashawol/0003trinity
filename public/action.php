@@ -33,6 +33,10 @@ $html = '
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Name:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['name'] . '</b></td></tr>';
     }
     
+    if (!empty($_POST['company'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Название компании:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['company'] . '</b></td></tr>';
+    }
+    
     if (!empty($_POST['tel'])) {
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Телефон:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['tel'] . '</b></td></tr>';
     }

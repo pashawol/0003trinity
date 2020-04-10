@@ -25,6 +25,8 @@
 	</head>
 	<body id="container1"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper" id="app">
+			<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev"> </div>
+			<div class="swiper-button-hand swiper-button-hand-next swiper-button-next"> </div>
 			<!-- start HEADER.header-->
 			<header class="header">
 				<div class="container">
@@ -86,7 +88,7 @@
 						<div class="container">
 							<div class="header-block__inner">
 								<h1>Ваш <span>стиль</span> презентации</h1>
-								<p>Управление проектами. <br> Визуализация. Контент. Продвижение.</p><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+								<p>Управление проектами. <br> Визуализация. Контент. Продвижение.</p><a class="btn btn-danger btn--lg link-modal" href="#modal-contact">Отправить контакты</a>
 							</div>
 							<div class="header-block__wrap">
 								<div class="header-block__item animate-item-js" v-for="n in 5" :id="'target' + (6 - n)"><picture> 
@@ -129,11 +131,13 @@
 											</div>
 										</div>
 									</div>
-									<div class="d-none d-lg-block"><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+									<div class="d-none d-lg-block"><a class="btn btn-danger btn--lg link-modal" href="#modal-contact">Отправить контакты</a>
 									</div>
 								</div>
 							</div>
 						</div>
+					</section>
+					<div class="sHello sHello--second section swiper-slide">
 						<div class="sHello__item">
 							<div class="container">
 								<div class="sHello__block-wrap">
@@ -152,11 +156,11 @@
 												</ul>
 											</div>
 										</div>
-									</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+									</div><a class="btn btn-danger btn--lg link-modal" href="#modal-contact">Отправить контакты</a>
 								</div>
 							</div>
 						</div>
-					</section>
+					</div>
 					<!-- end sHello-->
 					<!-- start sStrengths-->
 					<section class="sStrengths section swiper-slide" id="sStrengths" data-hash="sStrengths">
@@ -171,7 +175,7 @@
 										</div>
 									</div>
 								</div>
-							</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+							</div><a class="btn btn-danger btn--lg link-modal" href="#modal-contact">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end sStrengths-->
@@ -193,7 +197,7 @@
 <img    :src="'img/@2x/servise-lg-'+( n)+ '.png'" alt=""/>
 </picture> 
 								</div>
-							</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+							</div><a class="btn btn-danger btn--lg link-modal" href="#modal-contact">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end s-servise-->
@@ -215,7 +219,7 @@
 <img    :src="'img/@2x/servise-lg-'+( 3)+ '.png'" alt=""/>
 </picture> 
 								</div>
-							</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+							</div><a class="btn btn-danger btn--lg link-modal" href="#modal-contact">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end s-servise-->
@@ -237,7 +241,7 @@
 <img    :src="'img/@2x/servise-lg-'+( 4)+ '.png'" alt=""/>
 </picture> 
 								</div>
-							</div><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+							</div><a class="btn btn-danger btn--lg link-modal" href="#modal-contact">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end s-servise-->
@@ -247,7 +251,7 @@
 							<h2>Портфолио</h2>
 							<div class="sCases__sub-title">Все созданные нами работы принадлежат нашим клиентам. Мы&nbsp;не&nbsp;рекламируем свои услуги. Если вы&nbsp;зашли на&nbsp;наш сайт, значит кто-то рассказал вам о&nbsp;нас
 							</div>
-							<p>Мы&nbsp;будем рады поделиться примерами наших работ при личной встрече</p><a class="btn btn-danger btn--lg" :href="btnLink">Отправить контакты</a>
+							<p>Мы&nbsp;будем рады поделиться примерами наших работ при личной встрече</p><a class="btn btn-danger btn--lg link-modal" href="#modal-contact">Отправить контакты</a>
 						</div>
 					</section>
 					<!-- end sCases-->
@@ -317,11 +321,11 @@
 					<input class="utm_medium" type="hidden" name="utm_medium"/>
 					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
 					<div class="text-center">
-						<div class="form-wrap__title h3 ttu">Обратный звонок
+						<div class="form-wrap__title h3 ttu">Стать клиетом
 						</div>
 						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
 					</div>
-					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="name" placeholder="Ваше Имя" name="name" required="required"/> 
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="name" placeholder="Ваше Имя" name="name"/>
 					</div>
 					<!-- +e.input-wrap-->
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
@@ -332,6 +336,36 @@
 				</form>
 			</div>
 			<!-- #modal-call-->
+			<div class="form-wrap modal-win modal-form" id="modal-contact">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<div class="form-wrap__title h3 ttu">Отправить контакты
+						</div>
+						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
+					</div>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="name" placeholder="Ваше Имя" name="name"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="company" placeholder="Компания" name="company"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="email" placeholder="Ваш email" name="email"/>
+					</div>
+					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Отправить"/>
+					<div class="form-wrap__polite"><small class="form-wrap__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+					</div>
+				</form>
+			</div>
+			<!-- #modal-contact-->
 			<div class="  modal-win modal-form" id="modal-thanks">
 				<div class="text-center">
 					<div class="title h3 ttu">Спасибо!
