@@ -95,12 +95,12 @@ let app = new Vue({
       {
         text: 'Карточка компании',
         fileSize: '3mb',
-        filePath: "#",
+        filePath: "card.pdf",
       },
       {
         text: 'Подтверждение перехода на УСН',
         fileSize: '3mb',
-        filePath: "#",
+        filePath: "message.pdf",
       },
       // {
       //   text: 'Заверения о текущем статусе компании',

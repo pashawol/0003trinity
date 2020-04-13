@@ -9,5 +9,5 @@ mixin s-documents()
 						+e.img-wrap
 							img.res-i(src="img/svg/doc.svg", alt="")
 						+e.title {{document.text}}
-						+e.btn(:href="document.FilePath") Скачать документ ({{document.fileSize}})
+						+e.A.btn(:href="document.filePath" target="_blank") Скачать документ ({{document.fileSize}})
 	// end s-documents

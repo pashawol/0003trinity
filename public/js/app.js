@@ -81,11 +81,11 @@ var app = new Vue({
 		documents: [{
 			text: 'Карточка компании',
 			fileSize: '3mb',
-			filePath: "#"
+			filePath: "card.pdf"
 		}, {
 			text: 'Подтверждение перехода на УСН',
 			fileSize: '3mb',
-			filePath: "#"
+			filePath: "message.pdf"
 		} // {
 		//   text: 'Заверения о текущем статусе компании',
 		//   fileSize: '3mb',

@@ -255,9 +255,7 @@
 										<div class="s-documents__img-wrap"><img class="res-i" src="img/svg/doc.svg" alt=""/>
 										</div>
 										<div class="s-documents__title">{{document.text}}
-										</div>
-										<div class="s-documents__btn" :href="document.FilePath">Скачать документ ({{document.fileSize}})
-										</div>
+										</div><a class="s-documents__btn" :href="document.filePath" target="_blank">Скачать документ ({{document.fileSize}})</a>
 									</div>
 								</div>
 							</div>
